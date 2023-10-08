@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GPA Probation System</title>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    #body-text{
+            background-image: url("/images/libary.jpg");
+    }
+    #heading{
+            font-size: xxx-large;
+            text-align: center;
+            text-size-adjust: auto;
+            height: 50px;
+    }
+    #avatar{
+        background-color: white;
+          width: 60px;
+          height: 50px;
+          border-radius: 60px;
+          float: right;
+    }
+    #nav-bar{
+          width: 101%;
+          background-color: blue;
+          overflow: auto;
+    }
+    #nav-bar a{
+        float: left;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+        width: 175px;
+        text-align: center; /* If you want the text to be centered */
+    }
+    #nav-bar a:hover {
+        background-color: #000;
+    }
+</style>
+<body id="body-text">
+   <header id="heading">Welcome to the GPA Probation System</header>
+
+    <div id="nav-bar">
+        <img src="/images/avatar.png" alt="avatar" id="avatar">
+        <a id="active" href="#">Home</a>
+        <a href="add_student.html">Add Student</a>
+        <a href="add_lecturer.html">Add Lecturer</a>
+        <a href="#">Add Module</a>
+    </div>
+   <div id="admin">
+        <input type="text" id="text_box" readonly>
+   </div>
+   <div>
+        <input type="text" id="text_box" readonly>
+   </div>
+   <div>
+        <input type="text" id="text_box" readonly>
+   </div>
+</body>
+</html>

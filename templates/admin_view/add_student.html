@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GPA Probation System</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    * {box-sizing: border-box}
+    #body-text{
+            background-image: url("/images/libary.jpg");
+    }
+    #avatar{
+        background-color: white;
+          width: 60px;
+          height: 50px;
+          border-radius: 60px;
+          float: right;
+    }
+    #nav-bar{
+          width: 101%;
+          background-color: blue;
+          overflow: auto;
+
+    }
+    #nav-bar a{
+        float: left;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+        width: 175px;
+        text-align: center; /* If you want the text to be centered */
+    }
+    #nav-bar a:hover {
+        background-color: #000;
+    }
+    #form{
+        border-radius: 25px;
+        padding: 12px;
+        text-align: center;
+        width: 500px;
+        float: left;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px;
+    }
+    #div-space{
+        padding: 30px;
+        height: 30px;
+    }
+    input[type=text]{
+          width: 100%;
+          padding: 15px;
+          margin: 5px 0 22px 0;
+          display: inline-block;
+          border: none;
+          background: #f1f1f1;
+    }
+    #button{
+        justify-content: space-between;
+        border-radius: 25px;
+        overflow: auto;
+    }
+    #button :hover{
+        background-color: #000;
+    }
+    #student_portal_box{
+        float: right;
+    }
+</style>
+<body id="body-text">
+   <div id="nav-bar">
+        <img src="/images/avatar.png" alt="avatar" id="avatar">
+        <a id="active" href="admin.html">Home</a>
+        <a href="add_student.html">Add Student</a>
+        <a href="add_lecturer.html">Add Lecturer</a>
+        <a href="#">Add Module</a>
+    </div>
+   <div id="div-space">
+    <form id="form">
+        <div>
+           <label id="student_id">Student ID</label><br>
+           <input type="text" id="studentid" placeholder="Enter ID Number" required><br>
+           <label id="full_name" >Full Name</label><br>
+           <input type="text" id="firstname" placeholder="Enter Full Name" required><br>
+           <label id="email" >Email</label><br>
+           <input type="text" id="emails" placeholder="Enter Email Address" required><br>
+           <label id="school" >School</label><br>
+           <input type="text" id="schools" placeholder="Enter School" required><br>
+           <label id="program" >Programme</label><br>
+           <input type="text" id="programme" placeholder="Enter Programme Name" required><br>
+           <button id="button">Submit</button>
+           <button id="button">Search</button>
+           <button id="button">Update</button>
+           <button id="button">Remove</button>
+        </div>
+    </form>
+   </div>
+   <div id="student_portal_box">
+       <input type="text" id="student_portal" readonly>
+   </div>
+</body>
+</html>
