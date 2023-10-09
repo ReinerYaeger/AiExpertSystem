@@ -21,5 +21,9 @@ CREATE TABLE module_details (
     grade_points float,
     FOREIGN KEY (module) REFERENCES module_master(module),
     FOREIGN KEY (student_id) REFERENCES student_master(student_id),
-    PRIMARY KEY (module)
+    PRIMARY KEY (module,student_id)
 );
+
+CREATE TABLE lecturer(
+
+)
