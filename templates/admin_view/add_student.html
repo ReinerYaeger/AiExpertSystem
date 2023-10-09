@@ -9,18 +9,20 @@
     * {box-sizing: border-box}
     #body-text{
             background-image: url("/images/libary.jpg");
+
     }
     #avatar{
         background-color: white;
-          width: 60px;
-          height: 50px;
-          border-radius: 60px;
-          float: right;
+        width: 60px;
+        height: 50px;
+        border-radius: 60px;
+        float: right;
     }
     #nav-bar{
           width: 101%;
           background-color: blue;
           overflow: auto;
+          padding: 1px;
 
     }
     #nav-bar a{
@@ -30,12 +32,13 @@
         text-decoration: none;
         font-size: 17px;
         width: 175px;
-        text-align: center; /* If you want the text to be centered */
+        text-align: center;
+        margin-right: 170px;
     }
     #nav-bar a:hover {
         background-color: #000;
     }
-    #form{
+    #left-div{
         border-radius: 25px;
         padding: 12px;
         text-align: center;
@@ -65,40 +68,53 @@
     #button :hover{
         background-color: #000;
     }
-    #student_portal_box{
+    #right-div{
+        border-radius: 25px;
+        padding: 1px;
+        text-align: center;
+        width: 500px;
         float: right;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px;
+    }
+    #student_portal{
+        height: 100%;
+        border-radius: 25px;
+        margin: 0;
     }
 </style>
 <body id="body-text">
    <div id="nav-bar">
         <img src="/images/avatar.png" alt="avatar" id="avatar">
         <a id="active" href="admin.html">Home</a>
-        <a href="add_student.html">Add Student</a>
-        <a href="add_lecturer.html">Add Lecturer</a>
-        <a href="#">Add Module</a>
+        <a href="add_student.html">Student</a>
+        <a href="add_lecturer.html">Lecturer</a>
+        <a href="#">Module</a>
     </div>
    <div id="div-space">
     <form id="form">
-        <div>
+        <div id="left-div">
            <label id="student_id">Student ID</label><br>
            <input type="text" id="studentid" placeholder="Enter ID Number" required><br>
            <label id="full_name" >Full Name</label><br>
-           <input type="text" id="firstname" placeholder="Enter Full Name" required><br>
+           <input type="text" id="firstname" placeholder="Enter Full Name"><br>
            <label id="email" >Email</label><br>
-           <input type="text" id="emails" placeholder="Enter Email Address" required><br>
+           <input type="text" id="emails" placeholder="Enter Email Address"><br>
            <label id="school" >School</label><br>
-           <input type="text" id="schools" placeholder="Enter School" required><br>
+           <input type="text" id="schools" placeholder="Enter School"><br>
            <label id="program" >Programme</label><br>
-           <input type="text" id="programme" placeholder="Enter Programme Name" required><br>
+           <input type="text" id="programme" placeholder="Enter Programme Name"><br>
            <button id="button">Submit</button>
            <button id="button">Search</button>
            <button id="button">Update</button>
            <button id="button">Remove</button>
         </div>
+        <div id="right-div">
+            <input type="text" id="student_portal" readonly>
+        </div>
     </form>
-   </div>
-   <div id="student_portal_box">
-       <input type="text" id="student_portal" readonly>
+
    </div>
 </body>
 </html>
