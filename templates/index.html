@@ -5,10 +5,12 @@
 
 <html lang="">
 <head>
+    <title>{% block content %} {% endblock content %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %} ">
 </head>
 <body >
-    Index
+{% include 'navbar.html' %}
+
 
 
 </body>
