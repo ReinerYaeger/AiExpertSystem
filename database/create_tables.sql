@@ -23,7 +23,3 @@ CREATE TABLE module_details (
     FOREIGN KEY (student_id) REFERENCES student_master(student_id),
     PRIMARY KEY (module,student_id)
 );
-
-CREATE TABLE lecturer(
-
-)
