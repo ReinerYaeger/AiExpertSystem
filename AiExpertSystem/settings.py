@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ai_expert_system'
+    'ai_expert_system',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
