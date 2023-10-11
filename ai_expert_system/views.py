@@ -21,6 +21,4 @@ def student(request):
 
             database_manager.add_student(form_data)
 
-
-
     return render(request, 'student/student.html')
