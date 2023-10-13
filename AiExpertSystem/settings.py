@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ai_expert_system',
     'bootstrap5',
+    'pyswip',
 ]
 
 MIDDLEWARE = [
