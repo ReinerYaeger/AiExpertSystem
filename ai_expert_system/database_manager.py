@@ -24,3 +24,6 @@ def add_student(form_data):
 def get_students():
     with connection.cursor() as cursor:
         cursor.execute(f"SELECT * FROM student_master")
+        records = cursor.fetchall()
+        
+    return records

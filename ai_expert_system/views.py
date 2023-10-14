@@ -2,7 +2,9 @@ from django.shortcuts import render
 
 from ai_expert_system import database_manager
 from ai_expert_system.prolog import prolog_api
+from django.views.decorators.cache import cache_control
 
+@cache_control(no_cache=True, must_revalidate=True)
 
 def index(request):
     return render(request, 'index.html')
@@ -27,5 +29,10 @@ def generate_report(request):
     return render(request,'generate_report/generate_report.html')
 
 def query(request):
-    return render(request,'query_database/query_database.html')
+    student_list = database_manager.get_students()
+    context = {
+            'student_list': student_list,
+        }
+
+    return render(request,'query_database/query_database.html',context)
 
