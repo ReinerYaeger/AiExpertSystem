@@ -16,24 +16,39 @@
     <div class="row justify-content-center">
       <div class="col-md-4">
         <div class="box text-center p-4 border">
-          Box 1
+          <div class"font-weight-bold">Students </div>
+  
+        {% for student in student_list%}
+
+          <div>
+            ID Number: {{student.0}}
+          </div>
+          <div>
+            Name: {{student.1}}
+          </div>
+          <div>
+            Email: {{student.2}}
+          </div>
+          <div>
+            School: {{student.3}}
+          </div>
+          <div>
+            Programme: {{student.4}}
+          </div>
+        {% endfor %}
         </div>
       </div>
       <div class="col-md-4">
         <div class="box text-center p-4 border">
-          Box 2
+          View All Modules
         </div>
       </div>
       <div class="col-md-4">
         <div class="box text-center p-4 border">
-          Box 3
+          
         </div>
       </div>
     </div>
   </div>
-
-
-
-
 </body>
 </html>
