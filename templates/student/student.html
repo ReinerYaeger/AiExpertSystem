@@ -15,6 +15,7 @@
 <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
     <form method="post" action="" id="form" class="border p-4 rounded">
         {% csrf_token %}
+        <div>Student </div><br>
         <div class="form-group">
             <label for="student_id">Student ID</label>
             <input type="text" class="form-control" name="student_id" id="student_id" placeholder="Enter ID Number" required>
@@ -29,18 +30,38 @@
         </div>
         <div class="form-group">
             <label for="school">School</label>
-            <input type="text" class="form-control" name="11" id="school" placeholder="Enter School">
+            <input type="text" class="form-control" name="school" id="school" placeholder="Enter School">
         </div>
         <div class="form-group">
             <label for="programme">Programme</label>
-            <input type="text" class="form-control" name="programme_name" id="programme" placeholder="Enter Programme Name">
+            <input type="text" class="form-control" name="programme" id="programme" placeholder="Enter Programme Name">
         </div>
 
             <button type="submit" class="btn btn-primary" name="insert_student">Insert</button>
             <button type="submit" class="btn btn-secondary" name="update_student">Update</button>
             <button type="submit" class="btn btn-danger" name="delete_student">Delete</button>
     </form>
+
+
+    <form method="post" action="" id="form" class="border p-4 rounded">
+        {% csrf_token %}
+        <div>Module</div><br>
+        <div class="form-group">
+            <label for="module_name">Student ID</label>
+            <input type="text" class="form-control" name="module_name" id="module_name" placeholder="Module Name" required>
+        </div>
+        <div class="form-group">
+            <label for="module_name">Full Name</label>
+            <input type="text" class="form-control" name="num_of_credits" id="module_name" placeholder="Number of Credits">
+        </div>
+
+            <button type="submit" class="btn btn-primary" name="insert_module">Insert</button>
+            <button type="submit" class="btn btn-secondary" name="update_module">Update</button>
+            <button type="submit" class="btn btn-danger" name="delete_module">Delete</button>
+    </form>
 </div>
+
+
 
 
 

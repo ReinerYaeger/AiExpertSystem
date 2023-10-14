@@ -16,14 +16,23 @@ def check_data_base_connectivity():
 def add_student(form_data):
     with connection.cursor() as cursor:
         cursor.execute(f"INSERT INTO student_master (student_id,student_name,student_email,school,programme) "
-                       f"VALUES {form_data['student_id'],form_data['full_name'],form_data['email'],form_data['school_name'],form_data['programme_name']}")
+                       f"VALUES {form_data['student_id'], form_data['full_name'], form_data['email'], form_data['school'], form_data['programme']}")
 
     connection.commit()
     return redirect('/')
+
 
 def get_students():
     with connection.cursor() as cursor:
         cursor.execute(f"SELECT * FROM student_master")
         records = cursor.fetchall()
-        
+
+    return records
+
+
+def get_modules():
+    with connection.cursor() as cursor:
+        cursor.execute(f"SELECT * FROM module_master")
+        records = cursor.fetchall()
+
     return records

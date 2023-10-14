@@ -1,11 +1,12 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 
 from ai_expert_system import database_manager
 from ai_expert_system.prolog import prolog_api
 from django.views.decorators.cache import cache_control
 
-@cache_control(no_cache=True, must_revalidate=True)
 
+@cache_control(no_cache=True, must_revalidate=True)
 def index(request):
     return render(request, 'index.html')
 
@@ -17,22 +18,29 @@ def student(request):
                 'student_id': request.POST.get('student_id'),
                 'full_name': request.POST.get('full_name'),
                 'email': request.POST.get('email'),
-                'school_name': request.POST.get('school_name'),
-                'programme_name': request.POST.get('programme_name'),
+                'school': request.POST.get('school'),
+                'programme': request.POST.get('programme'),
+            }
+        if 'insert_module' in request.POST:
+            form_data = {
+                'module_name': request.POST.get('module_name'),
+                'num_of_credits': request.POST.get('num_of_credits'),
             }
 
             database_manager.add_student(form_data)
 
     return render(request, 'student/student.html')
 
+
 def generate_report(request):
-    return render(request,'generate_report/generate_report.html')
+    return render(request, 'generate_report/generate_report.html')
+
 
 def query(request):
-    student_list = database_manager.get_students()
+
     context = {
-            'student_list': student_list,
-        }
+        'student_list': database_manager.get_students(),
+        'module_list': database_manager.get_modules(),
+    }
 
-    return render(request,'query_database/query_database.html',context)
-
+    return render(request, 'query_database/query_database.html', context)
