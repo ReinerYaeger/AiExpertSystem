@@ -23,28 +23,26 @@ def student(request):
             }
             database_manager.add_student(form_data)
 
-        if 'update_module' in request.POST:
+        elif 'update_module' in request.POST:
             form_data = {
                 'module_name': request.POST.get('module_name'),
                 'num_of_credits': request.POST.get('num_of_credits'),
             }
             database_manager.update_module(form_data)
 
-        if 'delete_module' in request.POST:
+        elif 'delete_module' in request.POST:
             form_data = {
                 'module_name': request.POST.get('module_name')
             }
             database_manager.delete_module(form_data)
 
-
-            
-        if 'insert_module' in request.POST:
+        elif 'insert_module' in request.POST:
             form_data = {
                 'module_name': request.POST.get('module_name'),
                 'num_of_credits': request.POST.get('num_of_credits'),
             }
-
             database_manager.add_module(form_data)
+
     return render(request, 'student/student.html')
 
 
@@ -53,7 +51,6 @@ def generate_report(request):
 
 
 def query(request):
-
     context = {
         'student_list': database_manager.get_students(),
         'module_list': database_manager.get_modules(),
