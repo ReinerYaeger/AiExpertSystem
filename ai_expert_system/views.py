@@ -23,27 +23,30 @@ def student(request):
             }
             database_manager.add_student(form_data)
 
-        elif 'update_module' in request.POST:
-            form_data = {
-                'module_name': request.POST.get('module_name'),
-                'num_of_credits': request.POST.get('num_of_credits'),
-            }
-            database_manager.update_module(form_data)
-
-        elif 'delete_module' in request.POST:
-            form_data = {
-                'module_name': request.POST.get('module_name')
-            }
-            database_manager.delete_module(form_data)
-
-        elif 'insert_module' in request.POST:
-            form_data = {
-                'module_name': request.POST.get('module_name'),
-                'num_of_credits': request.POST.get('num_of_credits'),
-            }
-            database_manager.add_module(form_data)
-
     return render(request, 'student/student.html')
+
+
+def module(request):
+    if 'update_module' in request.POST:
+        form_data = {
+            'module_name': request.POST.get('module_name'),
+            'num_of_credits': request.POST.get('num_of_credits'),
+        }
+        database_manager.update_module(form_data)
+
+    elif 'delete_module' in request.POST:
+        form_data = {
+            'module_name': request.POST.get('module_name')
+        }
+        database_manager.delete_module(form_data)
+
+    elif 'insert_module' in request.POST:
+        form_data = {
+            'module_name': request.POST.get('module_name'),
+            'num_of_credits': request.POST.get('num_of_credits'),
+        }
+        database_manager.add_module(form_data)
+    return render(request, 'student/module.html')
 
 
 def generate_report(request):
@@ -56,7 +59,8 @@ def query(request):
         'module_list': database_manager.get_modules(),
     }
 
-    return render(request, 'query_database/query_database.html',context)
+    return render(request, 'query_database/query_database.html', context)
+
 
 def get_student_data(request):
     students = database_manager.get_students()  # Retrieve student data from your database_manager
@@ -71,6 +75,7 @@ def get_student_data(request):
         })
     return JsonResponse({'students': formatted_students})
 
+
 def get_module_data(request):
     modules = database_manager.get_modules()
     formatted_modules = []
@@ -82,4 +87,3 @@ def get_module_data(request):
         })
 
     return JsonResponse({'modules': formatted_modules})
-

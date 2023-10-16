@@ -9,12 +9,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Students </title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/background.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 </head>
 <body>
 {% include "navbar.html" %}
-
-<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+<div>
+<div class="bcg container d-flex justify-content-center align-items-center" style="height: 100vh;">
     <form method="post" action="" id="form" class="border p-4 rounded">
         {% csrf_token %}
         <div>Student </div><br>
@@ -43,5 +43,7 @@
             <button type="submit" class="btn btn-secondary" name="update_student">Update</button>
             <button type="submit" class="btn btn-danger" name="delete_student">Delete</button>
     </form>
+</div>
+</div>
 </body>
 </html>

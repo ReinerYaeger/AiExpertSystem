@@ -7,13 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <!-- Bootstrap CSS -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
 </head>
 
-<body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Your Logo</a>
+            <a class="navbar-brand" href="{% url 'index' %}">UPS</a>
 
             <!-- Toggler/collapsible Button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -31,6 +30,9 @@
                         <a class="nav-link" href="{% url 'student' %}">Student</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'module' %}">Module</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'generate_report' %}">Generate Report</a>
                     </li>
                     <li class="nav-item">
@@ -40,7 +42,5 @@
             </div>
         </div>
     </nav>
-
-</body>
 
 </html>
