@@ -7,31 +7,62 @@
 <head>
     <title>Query Database </title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %} ">
-
-    <script>
-    var currentStudentIndex = 0;
-    var students = {{ students|safe }};
-
-    function updateStudentDetails(index) {
-        document.getElementById('student_name').textContent = students[index].name;
-        document.getElementById('student_age').textContent = students[index].age;
-        // Update other student details as needed
-    }
-
-    function showPreviousStudent() {
-        if (currentStudentIndex > 0) {
-            currentStudentIndex--;
-            updateStudentDetails(currentStudentIndex);
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+function loadStudents() {
+    $.ajax({
+        url: '/get_student_data/',  // URL to your Django view that returns student data
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            // Update student details in the HTML
+            var studentsHtml = '';
+            data.students.forEach(function(student) {
+                studentsHtml += '<div>ID Number: ' + student.id + '</div>';
+                studentsHtml += '<div>Name: ' + student.name + '</div>';
+                studentsHtml += '<div>Email: ' + student.email + '</div>';
+                studentsHtml += '<div>School: ' + student.school + '</div>';
+                studentsHtml += '<div>Programme: ' + student.programme + '</div>';
+                studentsHtml += '<br>';
+            });
+            $('#student_details').html(studentsHtml);
+        },
+         error: function(jqXHR, textStatus, errorThrown) {
+            // Handle error case
+            console.error('AJAX Error: ' + textStatus, errorThrown);
         }
-    }
+    });
+}
 
-    function showNextStudent() {
-        if (currentStudentIndex < students.length - 1) {
-            currentStudentIndex++;
-            updateStudentDetails(currentStudentIndex);
+function loadModules() {
+    $.ajax({
+        url: '/get_module_data/',  // URL to your Django view that returns module data
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            // Update module details in the HTML
+            var modulesHtml = '';
+            data.modules.forEach(function(module) {
+                modulesHtml += '<div>Module Name: ' + module.module_name + '</div>';
+                modulesHtml += '<div>Credits: ' + module.credit + '</div>';
+                modulesHtml += '<br>';
+            });
+            $('#module_details').html(modulesHtml); // Assuming you have a <div> with id "module_details" to display module data
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            // Handle error case
+            console.error('AJAX Error: ' + textStatus, errorThrown);
         }
-    }
+    });
+}
 </script>
+<script>
+$(document).ready(function() {
+    loadStudents(); // Call the function when the document is ready
+    loadModules();
+});
+</script>
+
 </head>
 
 <body>
@@ -42,27 +73,9 @@
                     <div class="box text-center p-4 border">
                         <div class="font-weight-bold">Students </div>
 
-                        <!-- Student information display area -->
-                        {% for student in student_list%}
-                            <br>
-                            <div>
-                              <div>
-                                ID Number: {{student.0}}
-                              </div>
-                              <div>
-                                Name: {{student.1}}
-                              </div>
-                              <div>
-                                Email: {{student.2}}
-                              </div>
-                              <div>
-                                School: {{student.3}}
-                              </div>
-                              <div>
-                                Programme: {{student.4}}
-                              </div>
-                            </div>
-                        {% endfor %}
+                        <div id="student_details">
+    <!-- Student details will be displayed here -->
+                        </div>
 
                         <!-- Left and right arrows for navigation -->
                         <div class="arrow-container mt-3 d-flex justify-content-between">
@@ -75,17 +88,10 @@
                     <div class="box text-center p-4 border">
                         <div class="font-weight-bold">View All Modules </div>
 
-                        {% for module in module_list%}
-                            <br>
-                            <div>
-                              <div>
-                                Module Name: {{module.0}}
-                              </div>
-                              <div>
-                                Credits: {{module.1}}
-                              </div>
-                            </div>
-                        {% endfor %}
+                        <div id="module_details">
+                        </div>
+                    
+
 
                         <!-- Left and right arrows for navigation -->
                         <div class="arrow-container mt-3 d-flex justify-content-between">

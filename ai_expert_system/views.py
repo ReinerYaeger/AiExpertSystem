@@ -56,4 +56,30 @@ def query(request):
         'module_list': database_manager.get_modules(),
     }
 
-    return render(request, 'query_database/query_database.html', context)
+    return render(request, 'query_database/query_database.html',context)
+
+def get_student_data(request):
+    students = database_manager.get_students()  # Retrieve student data from your database_manager
+    formatted_students = []
+    for student in students:
+        formatted_students.append({
+            'id': student[0],
+            'name': student[1],
+            'email': student[2],
+            'school': student[3],
+            'programme': student[4],
+        })
+    return JsonResponse({'students': formatted_students})
+
+def get_module_data(request):
+    modules = database_manager.get_modules()
+    formatted_modules = []
+
+    for module in modules:
+        formatted_modules.append({
+            'module_name': module[0],
+            'credit': module[1],
+        })
+
+    return JsonResponse({'modules': formatted_modules})
+
