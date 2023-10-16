@@ -9,9 +9,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Students </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/background.css' %}">
 </head>
 <body>
 {% include "navbar.html" %}
+
 <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
     <form method="post" action="" id="form" class="border p-4 rounded">
         {% csrf_token %}
@@ -42,29 +44,7 @@
             <button type="submit" class="btn btn-danger" name="delete_student">Delete</button>
     </form>
 
-
-    <form method="post" action="" id="form" class="border p-4 rounded">
-        {% csrf_token %}
-        <div>Module</div><br>
-        <div class="form-group">
-            <label for="module_name">Student ID</label>
-            <input type="text" class="form-control" name="module_name" id="module_name" placeholder="Module Name" required>
-        </div>
-        <div class="form-group">
-            <label for="module_name">Full Name</label>
-            <input type="text" class="form-control" name="num_of_credits" id="module_name" placeholder="Number of Credits">
-        </div>
-
-            <button type="submit" class="btn btn-primary" name="insert_module">Insert</button>
-            <button type="submit" class="btn btn-secondary" name="update_module">Update</button>
-            <button type="submit" class="btn btn-danger" name="delete_module">Delete</button>
-    </form>
 </div>
-
-
-
-
-
 
 </body>
 </html>
