@@ -27,27 +27,27 @@ def add_module(form_data):
         cursor.execute(f"INSERT INTO module_master (module,no_of_credits)"
                        f"VALUES {form_data['module_name'], form_data['num_of_credits']}")
         connection.commit()
-        return redirect('/')
-
+        return
 
 def update_module(form_data):
     with connection.cursor() as cursor:
         cursor.execute(
             f"UPDATE module_master SET no_of_credits={int(form_data['num_of_credits'])} WHERE module='{form_data['module_name']}' ")
         connection.commit()
-    return redirect('/')
+    return
 
 
 def delete_module(form_data):
     with connection.cursor() as cursor:
         cursor.execute(f"DELETE FROM module_master WHERE module='{form_data['module_name']}'")
+    connection.commit()
+
 
 
 def get_students():
     with connection.cursor() as cursor:
         cursor.execute(f"SELECT * FROM student_master")
         records = cursor.fetchall()
-
     return records
 
 
@@ -55,5 +55,4 @@ def get_modules():
     with connection.cursor() as cursor:
         cursor.execute(f"SELECT * FROM module_master")
         records = cursor.fetchall()
-
     return records
