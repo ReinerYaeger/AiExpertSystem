@@ -61,7 +61,7 @@ $(document).ready(function() {
     setTimeout(function() {
         loadStudents(); // Call the function after a 5-second delay
         loadModules();
-    }, 2000); // 5000 milliseconds (5 seconds) delay
+    }, 100); // 5000 milliseconds (5 seconds) delay
 });</script>
 
 </head>
@@ -71,7 +71,7 @@ $(document).ready(function() {
         <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="col-md-4">
-                    <div class="box text-center p-4 border">
+                    <div class="card box text-center p-4 border">
                         <div class="font-weight-bold">Students </div><br>
 
                         <div id="student_details">
@@ -86,7 +86,7 @@ $(document).ready(function() {
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="box text-center p-4 border">
+                    <div class="card box text-center p-4 border">
                         <div class="font-weight-bold">View All Modules </div><br>
 
                         <div id="module_details">
@@ -102,7 +102,7 @@ $(document).ready(function() {
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="box text-center p-4 border">
+                    <div class="card box text-center p-4 border">
                         <div class="font-weight-bold">View Grades </div><br>
 
                         <!-- Student information display area -->

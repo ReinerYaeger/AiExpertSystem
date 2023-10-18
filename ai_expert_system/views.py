@@ -48,8 +48,24 @@ def module(request):
         database_manager.add_module(form_data)
     return render(request, 'student/module.html')
 
+
 def grades(request):
+
+    if 'insert_grade' in request.POST:
+            form_data = {
+                'student_id': request.POST.get('student_id'),
+                'full_name': request.POST.get('full_name'),
+                'email': request.POST.get('email'),
+                'academic_year': request.POST.get('academic_year'),
+                'semester': request.POST.get('semester'),
+                'test_1': request.POST.get('test_1'),
+                'test_2': request.POST.get('test_2'),
+            }
+            database_manager.add_module(form_data)
+
     return render(request, 'grades/grades.html')
+
+
 def generate_report(request):
     return render(request, 'generate_report/generate_report.html')
 
@@ -74,6 +90,7 @@ def get_student_data(request):
             'school': student[3],
             'programme': student[4],
         })
+
     return JsonResponse({'students': formatted_students})
 
 

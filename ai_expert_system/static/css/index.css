@@ -1,10 +1,9 @@
 body {
     background-image: url('../images/students.jpg');
-    background-color: red;
 }
 
-.bcg{
-    background-image: url('../images/students.jpg');
-    background-color: red;
-
+form .card {
+    background-color: white;
 }
+
+
