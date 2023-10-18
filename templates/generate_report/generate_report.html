@@ -1,18 +1,38 @@
+
 {% load static %}
 {% load bootstrap5 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 
-<html lang="">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Generate Report </title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %} ">
+    <meta charset="UTF-8">
+    <title>Students </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 </head>
-<body >
-{% include 'navbar.html' %}
-
-
-
-
+<body>
+{% include "navbar.html" %}
+<div>
+<div class="bcg container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <form method="post" action="" id="form" class="border p-4 rounded">
+        {% csrf_token %}
+        <div>Report </div><br>
+        <div class="form-group">
+            <label for="student_id">Student ID</label>
+            <input type="text" class="form-control" name="student_id" id="student_id" placeholder="Enter ID Number" required>
+        </div>
+        <div class="form-group">
+            <label for="academic_year">Academic Year</label>
+            <input type="text" class="form-control" name="Academic_Year" id="Academic_Year" placeholder="Enter Academic Year">
+        </div>
+        <div class="form-group">
+            <label for="semester">Semester</label>
+            <input type="number" class="form-control" name="Semester" id="Semester" placeholder="Enter Semester">
+        </div>
+            <button type="submit" class="btn btn-secondary" name="generate_report">Generate</button>
+    </form>
+</div>
+</div>
 </body>
 </html>

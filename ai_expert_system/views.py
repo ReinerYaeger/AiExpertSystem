@@ -48,7 +48,8 @@ def module(request):
         database_manager.add_module(form_data)
     return render(request, 'student/module.html')
 
-
+def grades(request):
+    return render(request, 'grades/grades.html')
 def generate_report(request):
     return render(request, 'generate_report/generate_report.html')
 
