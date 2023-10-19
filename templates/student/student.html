@@ -32,7 +32,11 @@
         </div>
         <div class="form-group">
             <label for="school">School</label>
-            <input type="text" class="form-control" name="school" id="school" placeholder="Enter School">
+            <select class="form-control" id="school" name="school">
+                {% for school in school_list %}
+                <option value="{{ school}}">{{ school }}</option>
+                {% endfor %}
+            </select>
         </div>
         <div class="form-group">
             <label for="programme">Programme</label>
@@ -43,7 +47,9 @@
             <button type="submit" class="btn btn-secondary" name="update_student">Update</button>
             <button type="submit" class="btn btn-danger" name="delete_student">Delete</button>
     </form>
+    </div>
 </div>
-</div>
+{% include "query_database/query_database.html"%}
+
 </body>
 </html>

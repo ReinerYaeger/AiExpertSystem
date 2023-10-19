@@ -1,19 +1,30 @@
+import logging
+
 from django.http import JsonResponse
 from django.shortcuts import render
 
-from ai_expert_system import database_manager
-from ai_expert_system.prolog import prolog_api
-from django.views.decorators.cache import cache_control
+from ai_expert_system import database_manager, utility
+
+logger = logging.getLogger('ai_expert_system')
 
 
-@cache_control(no_cache=True, must_revalidate=True)
 def index(request):
+    client_ip = request.META['REMOTE_ADDR']
+    logger.info(f"{client_ip} is Accessing The home page")
     return render(request, 'index.html')
 
 
 def student(request):
+    client_ip = request.META['REMOTE_ADDR']
+    logger.info(f"{client_ip} is Accessing The students page")
+    context = {
+        'school_list': utility.get_list_of_schools(),
+    }
+
     if request.method == 'POST':
+
         if 'insert_student' in request.POST:
+            logger.info(f"{client_ip} Making Post request to insert student")
             form_data = {
                 'student_id': request.POST.get('student_id'),
                 'full_name': request.POST.get('full_name'),
@@ -21,13 +32,25 @@ def student(request):
                 'school': request.POST.get('school'),
                 'programme': request.POST.get('programme'),
             }
+
             database_manager.add_student(form_data)
 
-    return render(request, 'student/student.html')
+        if 'delete_student' in request.POST:
+            logger.info(f"{client_ip} Making Post request to delete {request.POST.get('student_id')} student")
+            form_data = {
+                'student_id': request.POST.get('student_id'),
+            }
+            database_manager.delete_student(form_data)
+    return render(request, 'student/student.html', context)
 
 
 def module(request):
+    client_ip = request.META['REMOTE_ADDR']
+
+    logger.info(f"{client_ip} is Accessing The module page")
+
     if 'update_module' in request.POST:
+        logger.info(f"{client_ip} Making Post request to update module")
         form_data = {
             'module_name': request.POST.get('module_name'),
             'num_of_credits': request.POST.get('num_of_credits'),
@@ -35,12 +58,14 @@ def module(request):
         database_manager.update_module(form_data)
 
     elif 'delete_module' in request.POST:
+        logger.info(f"{client_ip} Making Post request to delete module")
         form_data = {
             'module_name': request.POST.get('module_name')
         }
         database_manager.delete_module(form_data)
 
     elif 'insert_module' in request.POST:
+        logger.info(f"{client_ip} Making Post request to insert module")
         form_data = {
             'module_name': request.POST.get('module_name'),
             'num_of_credits': request.POST.get('num_of_credits'),
@@ -50,27 +75,35 @@ def module(request):
 
 
 def grades(request):
-
+    client_ip = request.META['REMOTE_ADDR']
+    context = {
+        'year_list': utility.get_year(),
+        'id_list': database_manager.get_student_ids(),
+        'module_list': database_manager.get_module_names(),
+    }
     if 'insert_grade' in request.POST:
-            form_data = {
-                'student_id': request.POST.get('student_id'),
-                'full_name': request.POST.get('full_name'),
-                'email': request.POST.get('email'),
-                'academic_year': request.POST.get('academic_year'),
-                'semester': request.POST.get('semester'),
-                'test_1': request.POST.get('test_1'),
-                'test_2': request.POST.get('test_2'),
-            }
-            database_manager.add_module(form_data)
+        logger.info(f"{client_ip} Making Post request to insert grade")
+        form_data = {
+            'student_id': request.POST.get('student_id'),
+            'module_code': request.POST.get('module_code'),
+            'academic_year': request.POST.get('academic_year'),
+            'semester': request.POST.get('semester'),
+            'test_1': request.POST.get('test_1'),
+            'test_2': request.POST.get('test_2'),
+        }
+        database_manager.add_student_progress(form_data)
 
-    return render(request, 'grades/grades.html')
+    return render(request, 'grades/grades.html', context)
 
 
 def generate_report(request):
+    client_ip = request.META['REMOTE_ADDR']
+    logger.info(f"{client_ip} Making Post request to Generate a Report")
     return render(request, 'generate_report/generate_report.html')
 
 
 def query(request):
+    client_ip = request.META['REMOTE_ADDR']
     context = {
         'student_list': database_manager.get_students(),
         'module_list': database_manager.get_modules(),
@@ -80,6 +113,7 @@ def query(request):
 
 
 def get_student_data(request):
+    client_ip = request.META['REMOTE_ADDR']
     students = database_manager.get_students()  # Retrieve student data from your database_manager
     formatted_students = []
     for student in students:
@@ -95,6 +129,7 @@ def get_student_data(request):
 
 
 def get_module_data(request):
+    client_ip = request.META['REMOTE_ADDR']
     modules = database_manager.get_modules()
     formatted_modules = []
 

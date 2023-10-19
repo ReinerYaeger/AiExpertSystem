@@ -1,52 +1,71 @@
-
-{% load static %}
-{% load bootstrap5 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
+{% load static %} {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Grades </title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
-</head>
-<body>
-{% include "navbar.html" %}
-<div>
-<div class="bcg container d-flex justify-content-center align-items-center" style="height: 100vh;">
-    <form method="post" action="" id="form" class="border p-4 rounded">
-        {% csrf_token %}
-        <div>Grades </div><br>
-        <div class="form-group">
-            <label for="student_id">Student ID</label>
-            <input type="text" class="form-control" name="student_id" id="student_id" placeholder="Enter ID Number" required>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Grades</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+    </head>
+    <body>
+        {% include "navbar.html" %}
+        <div>
+            <div class="bcg container d-flex justify-content-center align-items-center" style="height: 100vh;">
+                <form method="post" action="" id="form" class="border p-4 rounded">
+                    {% csrf_token %}
+                    <div>Grades</div>
+                    <br />
+                    <div class="form-group">
+                        <label for="student_id">Student ID</label>
+                        <select class="form-control" id="student_id" name="student_id">
+                                {% for id in id_list %}
+                                <option value="{{ id }}">{{ id }}</option>
+                                {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="module_code">Module Code</label>
+                        <select class="form-control" id="module_code" name="module_code">
+                            {% for module in module_list %}
+                            <option value="{{ module }}">{{ module }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="academic_year">Academic Year</label>
+                        <div class="input-group">
+                            <select class="form-control" id="academic_year" name="academic_year">
+                                {% for year in year_list %}
+                                <option value="{{ year }}">{{ year }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="semester">Semester</label>
+
+                        <select class="form-control" id="semester" name="semester">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="test_1">Test 1</label>
+                        <input type="text" class="form-control" name="test_1" id="test_1" placeholder="Enter Test 1 Grade" />
+                    </div>
+                    <div class="form-group">
+                        <label for="test_2">Test 2</label>
+                        <input type="text" class="form-control" name="test_2" id="test_2" placeholder="Enter Test 2 Grade" />
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="insert_grade">Insert</button>
+                    <button type="submit" class="btn btn-secondary" name="update_grade">Update</button>
+                    <button type="submit" class="btn btn-danger" name="delete_grade">Delete</button>
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="full_name">Module Code</label>
-            <input type="text" class="form-control" name="full_name" id="full_name" placeholder="Enter Module Code">
-        </div>
-        <div class="form-group">
-            <label for="academic_year">Academic Year</label>
-            <input type="text" class="form-control" name="academic_year" id="academic_year" placeholder="Enter Academic Year">
-        </div>
-        <div class="form-group">
-            <label for="semester">Semester</label>
-            <input type="number" class="form-control" name="semester" id="semester" placeholder="Enter Semester">
-        </div>
-        <div class="form-group">
-            <label for="test_1">Test 1</label>
-            <input type="text" class="form-control" name="test_1" id="test_1" placeholder="Enter Test 1 Grade">
-        </div>
-        <div class="form-group">
-            <label for="test_2">Test 2</label>
-            <input type="text" class="form-control" name="test_2" id="test_2" placeholder="Enter Test 2 Grade">
-        </div>
-            <button type="submit" class="btn btn-primary" name="insert_grade">Insert</button>
-            <button type="submit" class="btn btn-secondary" name="update_grade">Update</button>
-            <button type="submit" class="btn btn-danger" name="delete_grade">Delete</button>
-    </form>
-</div>
-</div>
-</body>
+
+        {% include "query_database/query_database.html"%}
+    </body>
 </html>

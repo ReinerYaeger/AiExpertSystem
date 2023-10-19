@@ -1,4 +1,4 @@
-CREATE TABLE student_master (
+CREATE TABLE student (
     student_id varchar(10),
     student_name varchar(150),
     student_email varchar(100),
@@ -7,16 +7,17 @@ CREATE TABLE student_master (
     PRIMARY KEY (student_id)
 );
 
-CREATE TABLE module_master (
-    module varchar(100),
-    no_of_credits int,
-    PRIMARY KEY (module)
+CREATE TABLE module (
+    module VARCHAR(100),
+    no_of_credits INT,
+    PRIMARY KEY (module),
+    CONSTRAINT CHK_ValidCredits CHECK (no_of_credits IN (1, 2, 3, 4))
 );
 
-CREATE TABLE module_details (
+CREATE TABLE student_progress(
     module varchar(100),
     student_id varchar(10),
-    academic_year int,
+    academic_year varchar(9),
     semester int CHECK (semester IN (1, 2, 3)),
     grade_points float,
     FOREIGN KEY (module) REFERENCES module_master(module),
