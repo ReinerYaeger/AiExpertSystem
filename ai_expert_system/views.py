@@ -15,8 +15,6 @@ def index(request):
     client_ip = request.META['REMOTE_ADDR']
     logger.info(f"{client_ip} is Accessing The home page")
 
-
-
     return render(request, 'index.html')
 
 

@@ -1,5 +1,6 @@
 import datetime
 import time
+from django.core.mail import send_mail
 
 from ai_expert_system import database_manager
 
@@ -25,7 +26,16 @@ def get_list_of_schools():
 
 def alert_system():
     while True:
-        print(1)
-        time.sleep(2629800 * 3)
+        records = database_manager.get_all_students_gpa()
+        for record in records:
+            if float(record[6]) <= 2.2:
 
-    # database_manager.get_all_students_gpa()
+                with open('email_template', 'r') as file:
+                    message_template = file.read()
+
+                customized_message = message_template.replace('[Student Name]', record[1])
+                customized_message = message_template.replace('[Student id]', record[0])
+                customized_message = customized_message.replace('[Programme]', record[4])
+                customized_message = customized_message.replace('[School Name]', record[4])
+
+        time.sleep(2629800 * 3)
