@@ -113,7 +113,6 @@ def query(request):
 
 
 def get_student_data(request):
-    client_ip = request.META['REMOTE_ADDR']
     students = database_manager.get_students()  # Retrieve student data from your database_manager
     formatted_students = []
     for student in students:
@@ -129,7 +128,6 @@ def get_student_data(request):
 
 
 def get_module_data(request):
-    client_ip = request.META['REMOTE_ADDR']
     modules = database_manager.get_modules()
     formatted_modules = []
 
@@ -140,3 +138,20 @@ def get_module_data(request):
         })
 
     return JsonResponse({'modules': formatted_modules})
+
+
+def get_student_progress_data(request):
+    grade_list = database_manager.get_grades()
+    formatted_grades = []
+
+    for grade in grade_list:
+        formatted_grades.append({
+            'student_id': grade[0],
+            'academic_year': grade[1],
+            'semester': grade[2],
+            'grade_points': grade[3],
+            'test_1': grade[4],
+            'test_2': grade[5],
+        })
+
+    return JsonResponse({'student_details': formatted_grades})

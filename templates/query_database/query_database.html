@@ -8,60 +8,15 @@
     <title>Query Database </title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %} ">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-function loadStudents() {
-    $.ajax({
-        url: '/get_student_data/',  // URL to your Django view that returns student data
-        type: 'GET',
-        dataType: 'json',
-        success: function(data) {
-            // Update student details in the HTML
-            var studentsHtml = '';
-            data.students.forEach(function(student) {
-                studentsHtml += '<div>ID Number: ' + student.id + '</div>';
-                studentsHtml += '<div>Name: ' + student.name + '</div>';
-                studentsHtml += '<div>Email: ' + student.email + '</div>';
-                studentsHtml += '<div>School: ' + student.school + '</div>';
-                studentsHtml += '<div>Programme: ' + student.programme + '</div>';
-                studentsHtml += '<br>';
-            });
-            $('#student_details').html(studentsHtml);
-        },
-         error: function(jqXHR, textStatus, errorThrown) {
-            // Handle error case
-            console.error('AJAX Error: ' + textStatus, errorThrown);
-        }
-    });
-}
+    <script src="{% static 'js/api_controller.js' %}"></script>
 
-function loadModules() {
-    $.ajax({
-        url: '/get_module_data/',  // URL to your Django view that returns module data
-        type: 'GET',
-        dataType: 'json',
-        success: function(data) {
-            // Update module details in the HTML
-            var modulesHtml = '';
-            data.modules.forEach(function(module) {
-                modulesHtml += '<div>Module Name: ' + module.module_name + '</div>';
-                modulesHtml += '<div>Credits: ' + module.credit + '</div>';
-                modulesHtml += '<br>';
-            });
-            $('#module_details').html(modulesHtml); // Assuming you have a <div> with id "module_details" to display module data
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            // Handle error case
-            console.error('AJAX Error: ' + textStatus, errorThrown);
-        }
-    });
-}
-</script>
 <script>
 $(document).ready(function() {
     setTimeout(function() {
-        loadStudents(); // Call the function after a 5-second delay
+        loadStudents();
         loadModules();
-    }, 100); // 5000 milliseconds (5 seconds) delay
+        loadStudentProgress();
+    }, 100);
 });</script>
 
 </head>
@@ -78,11 +33,6 @@ $(document).ready(function() {
     <!-- Student details will be displayed here -->
                         </div>
 
-                        <!-- Left and right arrows for navigation -->
-                        <div class="arrow-container mt-3 d-flex justify-content-between">
-                            <div  id="prev_button" class="arrow-left btn btn-primary" onclick="showPreviousStudent()">&lt;</div>
-                            <div id="next_button" class="arrow-right btn btn-primary" onclick="showNextStudent()">&gt;</div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -91,30 +41,16 @@ $(document).ready(function() {
 
                         <div id="module_details">
                         </div>
-                    
 
-
-                        <!-- Left and right arrows for navigation -->
-                        <div class="arrow-container mt-3 d-flex justify-content-between">
-                            <div  id="prev_button" class="arrow-left btn btn-primary" onclick="showPreviousStudent()">&lt;</div>
-                            <div id="next_button" class="arrow-right btn btn-primary" onclick="showNextStudent()">&gt;</div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card box text-center p-4 border">
                         <div class="font-weight-bold">View Grades </div><br>
-
-                        <!-- Student information display area -->
                         <div id="student_details">
-                            <!-- Student details will be displayed here -->
+
                         </div>
 
-                        <!-- Left and right arrows for navigation -->
-                        <div class="arrow-container mt-3 d-flex justify-content-between">
-                            <div  id="prev_button" class="arrow-left btn btn-primary" onclick="showPreviousStudent()">&lt;</div>
-                            <div id="next_button" class="arrow-right btn btn-primary" onclick="showNextStudent()">&gt;</div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -10,9 +10,8 @@ urlpatterns = [
     path('generate_report/', views.generate_report, name='generate_report'),
     path('query/', views.query, name='query'),
 
-
-    path('get_student_data/',views.get_student_data,name='get_student_data'),
-    path('get_module_data/',views.get_module_data,name='get_module_data'),
-
+    path('get_student_data/', views.get_student_data, name='get_student_data'),
+    path('get_module_data/', views.get_module_data, name='get_module_data'),
+    path('get_student_progress_data/', views.get_student_progress_data, name='get_student_progress_data'),
 
 ]

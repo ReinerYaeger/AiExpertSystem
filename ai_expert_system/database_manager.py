@@ -92,12 +92,25 @@ def get_module_names():
 
 def add_student_progress(form_data):
     with connection.cursor() as cursor:
-        sql_query = "INSERT INTO student_progress (module, student_id, academic_year, semester, test_1, test_2) VALUES (?, ?, ?, ?, ?, ?)"
-        values = (form_data['module_code'], form_data['student_id'], form_data['academic_year'], form_data['semester'],
-                  float(form_data['test_1']), float(form_data['test_2']))
-
+        sql_query = "INSERT INTO student_progress (module, student_id, academic_year, semester, test_1, test_2) VALUES (%s, %s, %s, %s, %s, %s)"
+        values = (
+            form_data['module_code'],
+            form_data['student_id'],
+            form_data['academic_year'],
+            form_data['semester'],
+            float(form_data['test_1']),
+            float(form_data['test_2'])
+        )
         print(values)
 
         cursor.execute(sql_query, values)
         connection.commit()
     return
+
+
+def get_grades():
+    with connection.cursor() as cursor:
+        cursor.execute(f"SELECT * FROM student_progress")
+        records = cursor.fetchall()
+
+    return records
