@@ -20,7 +20,9 @@ CREATE TABLE student_progress(
     academic_year varchar(9),
     semester int CHECK (semester IN (1, 2, 3)),
     grade_points float,
-    FOREIGN KEY (module) REFERENCES module_master(module),
-    FOREIGN KEY (student_id) REFERENCES student_master(student_id),
-    PRIMARY KEY (module,student_id)
+    test_1 float,
+    test_2 float,
+    FOREIGN KEY (module) REFERENCES module(module),
+    FOREIGN KEY (student_id) REFERENCES student(student_id),
+    PRIMARY KEY (module,student_id,semester)
 );

@@ -146,12 +146,13 @@ def get_student_progress_data(request):
 
     for grade in grade_list:
         formatted_grades.append({
-            'student_id': grade[0],
-            'academic_year': grade[1],
-            'semester': grade[2],
-            'grade_points': grade[3],
-            'test_1': grade[4],
-            'test_2': grade[5],
+            'module_code': grade[0],
+            'student_id': grade[1],
+            'academic_year': grade[2],
+            'semester': grade[3],
+            'grade_points': grade[4],
+            'test_1': grade[5],
+            'test_2': grade[6],
         })
     print(formatted_grades)
 
