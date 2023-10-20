@@ -56,7 +56,7 @@ function loadStudentProgress() {
                 studentHtml += '<div>Grade Points: ' + grade.grade_points + '</div>';
                 studentHtml += '<br>';
             });
-            $('#student_details').html(studentHtml); // Update the content of the div with id "student_details"
+            $('#progress_details').html(studentHtml); // Update the content of the div with id "student_details"
         }
     });
 }

@@ -153,5 +153,6 @@ def get_student_progress_data(request):
             'test_1': grade[4],
             'test_2': grade[5],
         })
+    print(formatted_grades)
 
     return JsonResponse({'student_details': formatted_grades})
