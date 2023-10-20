@@ -114,3 +114,18 @@ def get_grades():
         records = cursor.fetchall()
 
     return records
+
+
+def find_students(form_data):
+    with connection.cursor() as cursor:
+        cursor.execute(f"Select * from Student_progress_view WHERE academic_year='{form_data['academic_year']}'")
+        records = cursor.fetchall()
+    return records
+
+
+def get_all_students_gpa():
+    with connection.cursor() as cursor:
+        cursor.execute(f"Select * from student_gpa_view WHERE grade_points is not null")
+        records = cursor.fetchall()
+    return records
+

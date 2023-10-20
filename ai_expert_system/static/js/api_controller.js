@@ -49,6 +49,7 @@ function loadStudentProgress() {
             data.student_details.forEach(function(grade) {
                 studentHtml += '<br>';
                 studentHtml += '<div>Student ID: ' + grade.student_id + '</div>';
+                studentHtml += '<div>Module Code: ' + grade.module_code + '</div>';
                 studentHtml += '<div>Academic Year: ' + grade.academic_year + '</div>';
                 studentHtml += '<div>Semester: ' + grade.semester + '</div>';
                 studentHtml += '<div>Test 1: ' + grade.test_1 + '</div>';

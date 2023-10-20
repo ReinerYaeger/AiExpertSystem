@@ -1,4 +1,7 @@
 import datetime
+import time
+
+from ai_expert_system import database_manager
 
 
 def get_year():
@@ -18,3 +21,11 @@ def get_list_of_schools():
     school_list = ['SCIT', 'SOE', 'CSN', 'COBAM', 'CAHW', 'SOP', 'STVE', 'SHSS', 'FOW', 'SBLM', 'CSA', 'SMS', 'CSSS',
                    'SNAS', 'COHS', 'SPHHT']
     return school_list
+
+
+def alert_system():
+    while True:
+        print(1)
+        time.sleep(2629800 * 3)
+
+    # database_manager.get_all_students_gpa()
