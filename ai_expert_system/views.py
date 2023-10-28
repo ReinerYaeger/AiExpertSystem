@@ -4,12 +4,13 @@ import threading
 from django.http import JsonResponse
 from django.shortcuts import render
 
-from ai_expert_system import database_manager, utility#, prolog_controller
+from ai_expert_system import database_manager, utility  # , prolog_controller
 
 logger = logging.getLogger('ai_expert_system')
 
 t1 = threading.Thread(target=utility.alert_system)
 t1.start()
+
 
 def index(request):
     client_ip = request.META['REMOTE_ADDR']
@@ -103,17 +104,18 @@ def grades(request):
 def generate_report(request):
     client_ip = request.META['REMOTE_ADDR']
     logger.info(f"{client_ip} Making Post request to Generate a Report")
+    context = {
+        'year_list': utility.get_year(),
+        'student_list':[],
+    }
 
     if 'generate_report' in request.POST:
         form_data = {
             'academic_year': request.POST.get('academic_year'),
             'gpa': request.POST.get('gpa'),
         }
-        database_manager.find_students(form_data)
 
-    context = {
-        'year_list': utility.get_year(),
-    }
+        context['student_list'].append(database_manager.find_students(form_data))
     return render(request, 'generate_report/generate_report.html', context)
 
 
