@@ -168,8 +168,6 @@ def get_student_progress_data(request):
             'academic_year': grade[2],
             'semester': grade[3],
             'grade_points': grade[4],
-            'test_1': grade[5],
-            'test_2': grade[6],
         })
 
     return JsonResponse({'student_details': formatted_grades})
