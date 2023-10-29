@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:sqlserver://Expert_System.mssql.somee.com:1433;database=Expert_System</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="expert_system@localhost" uuid="962b300a-ec88-4ee4-9e65-a024dccfadcd">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/expert_system</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

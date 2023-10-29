@@ -25,17 +25,21 @@ def get_list_of_schools():
 
 
 def alert_system():
-    while True:
-        records = database_manager.get_all_students_gpa()
-        for record in records:
-            if float(record[6]) <= 2.2:
+    print(5)
+    # This on the first iteration should check all the students on probation and send an email
 
-                with open('email_template', 'r') as file:
-                    message_template = file.read()
-
-                customized_message = message_template.replace('[Student Name]', record[1])
-                customized_message = message_template.replace('[Student id]', record[0])
-                customized_message = customized_message.replace('[Programme]', record[4])
-                customized_message = customized_message.replace('[School Name]', record[4])
-
-        time.sleep(2629800 * 3)
+    # while True:
+    #     records = database_manager.get_all_students_gpa()
+    #     for record in records:
+    #         if float(record[6]) <= 2.2:
+    #
+    #             with open('email_template', 'r') as file:
+    #                 message_template = file.read()
+    #
+    #             customized_message = message_template.replace('[Student Name]', record[1])
+    #             customized_message = message_template.replace('[Student id]', record[0])
+    #             customized_message = customized_message.replace('[Programme]', record[4])
+    #             customized_message = customized_message.replace('[School Name]', record[4])
+    #
+    # Send email every three months
+    #     time.sleep(2629800 * 3)

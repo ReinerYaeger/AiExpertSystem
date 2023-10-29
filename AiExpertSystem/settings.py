@@ -77,19 +77,19 @@ WSGI_APPLICATION = 'AiExpertSystem.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        "ENGINE": os.getenv('DATABASE_ENGINE'),
-        "NAME": os.getenv('DATABASE_NAME'),
-        "USER": "SOmmeUser_SQLLogin_1",
-        "PASSWORD": os.getenv('PASSWORD'),
-        "HOST": os.getenv('HOST'),
-        "PORT": os.getenv('PORT'),
-        "OPTIONS": {
-            'driver': 'ODBC Driver 17 for SQL Server',
-        },
-    }
-}
+# DATABASES = {
+#     'default': {
+#         "ENGINE": os.getenv('DATABASE_ENGINE'),
+#         "NAME": os.getenv('DATABASE_NAME'),
+#         "USER": "SOmmeUser_SQLLogin_1",
+#         "PASSWORD": os.getenv('PASSWORD'),
+#         "HOST": os.getenv('HOST'),
+#         "PORT": os.getenv('PORT'),
+#         "OPTIONS": {
+#             'driver': 'ODBC Driver 17 for SQL Server',
+#         },
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

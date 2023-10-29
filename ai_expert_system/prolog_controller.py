@@ -1,4 +1,7 @@
+from django.db.backends import mysql
 from pyswip import Prolog
+
+from ai_expert_system import database_manager
 
 prolog = Prolog()
 prolog.consult("prolog/knowledge_base.pl")
@@ -8,18 +11,22 @@ print(prolog.query(list("parent_of('Mark',_)")))
 
 def send_data_to_prolog():
     try:
+
         # Query the database to retrieve module details (grade points)
+
+        ##should be in the database manager
         query = "SELECT module, student_id, academic_year, semester, grade_points FROM student_progress"
         cursor.execute(query)
-        student_progress = cursor.fetchall()
+        student_list = cursor.fetchall()
 
         # Iterate through the module details and assert them as facts in Prolog
-        for student_progress in student_progresses:
-            module, student_id, academic_year, semester, grade_points = student_progress
+        for student in student_list:
+            module, student_id, academic_year, semester, grade_points = student
             prolog.assertz(f"student_progress('{module}', {student_id},{academic_year},{semester}, {grade_points})")
             print(f"Asserted: student_progress({module}', {student_id},{academic_year},{semester}, {grade_points})")
 
         # Query the database to retrieve module master data (credits)
+        ##should be in the database manager
         query = "SELECT module, no_of_credits FROM module"
         cursor.execute(query)
         module_master_data = cursor.fetchall()
@@ -61,7 +68,7 @@ def calculate_cumulative_gpa(student_id):
             return None
     except Exception as e:
         print(f"Error calculating cumulative GPA for Student {student_id}: {e}")
-        return None
+        return e
 
 
 # Generate the report

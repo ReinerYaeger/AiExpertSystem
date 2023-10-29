@@ -4,7 +4,7 @@ import threading
 from django.http import JsonResponse
 from django.shortcuts import render
 
-from ai_expert_system import database_manager, utility  # , prolog_controller
+from ai_expert_system import database_manager, utility, prolog_controller  # , prolog_controller
 
 logger = logging.getLogger('ai_expert_system')
 
@@ -22,6 +22,8 @@ def index(request):
 def student(request):
     client_ip = request.META['REMOTE_ADDR']
     logger.info(f"{client_ip} is Accessing The students page")
+    prolog_controller.send_data_to_prolog()
+
     context = {
         'school_list': utility.get_list_of_schools(),
     }
@@ -93,8 +95,6 @@ def grades(request):
             'module_code': request.POST.get('module_code'),
             'academic_year': request.POST.get('academic_year'),
             'semester': request.POST.get('semester'),
-            'test_1': request.POST.get('test_1'),
-            'test_2': request.POST.get('test_2'),
         }
         database_manager.add_student_progress(form_data)
 
