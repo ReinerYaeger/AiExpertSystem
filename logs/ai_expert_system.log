@@ -264,3 +264,85 @@ INFO 2023-10-29 15:36:39,162 views 127.0.0.1 is Accessing The home page
 INFO 2023-10-29 15:41:15,134 views 127.0.0.1 is Accessing The home page
 INFO 2023-10-29 15:41:32,918 views 127.0.0.1 is Accessing The students page
 INFO 2023-10-29 15:47:21,102 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:20:54,754 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:20:56,110 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:20:57,591 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:20:58,862 views 127.0.0.1 is Accessing The module page
+INFO 2023-10-31 19:20:59,406 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:21:00,120 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:21:00,804 views 127.0.0.1 is Accessing The module page
+INFO 2023-10-31 19:21:01,519 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:21:02,145 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:21:02,737 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:21:03,327 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:21:03,934 views 127.0.0.1 is Accessing The module page
+INFO 2023-10-31 19:21:05,177 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-10-31 19:21:06,911 views 127.0.0.1 is Accessing The module page
+INFO 2023-10-31 19:21:07,413 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:21:07,856 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:21:08,725 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:21:09,287 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:21:10,128 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:21:25,542 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:21:26,328 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:21:26,896 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:22:50,431 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:23:39,905 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:23:39,947 database_manager <mysql.connector.connection_cext.CMySQLConnection object at 0x00000255B7564280>
+INFO 2023-10-31 19:23:41,084 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:23:41,110 database_manager <mysql.connector.connection_cext.CMySQLConnection object at 0x00000266B1452C70>
+INFO 2023-10-31 19:30:42,477 database_manager Connected to the database
+INFO 2023-10-31 19:30:42,484 database_manager Connected to the database
+INFO 2023-10-31 19:30:42,485 database_manager Connected to the database
+INFO 2023-10-31 19:30:42,491 database_manager Connected to the database
+INFO 2023-10-31 19:38:18,961 database_manager Connected to the database
+INFO 2023-10-31 19:38:18,970 database_manager Connected to the database
+INFO 2023-10-31 19:39:19,044 database_manager Connected to the database
+INFO 2023-10-31 19:39:19,050 database_manager Connected to the database
+INFO 2023-10-31 19:39:58,477 database_manager Connected to the database
+INFO 2023-10-31 19:40:04,910 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:40:23,899 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:40:23,899 views 127.0.0.1 Making Post request to insert student
+ERROR 2023-10-31 19:40:23,900 database_manager Error adding student to the database: 1046 (3D000): No database selected
+INFO 2023-10-31 19:41:01,347 database_manager Connected to the database
+INFO 2023-10-31 19:41:35,028 database_manager Connected to the database
+INFO 2023-10-31 19:41:45,391 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:41:45,391 views 127.0.0.1 Making Post request to insert student
+INFO 2023-10-31 19:41:45,394 database_manager Student was added successfully
+INFO 2023-10-31 19:44:49,435 database_manager Connected to the database
+INFO 2023-10-31 19:44:52,173 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:44:52,173 views 127.0.0.1 Making Post request to insert student
+ERROR 2023-10-31 19:44:52,173 database_manager Error adding student to the database: 1062 (23000): Duplicate entry '1900657' for key 'PRIMARY'
+INFO 2023-10-31 19:45:28,347 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:45:28,347 views 127.0.0.1 Making Post request to insert student
+INFO 2023-10-31 19:45:28,350 database_manager Student was added successfully
+INFO 2023-10-31 19:48:32,235 database_manager Connected to the database
+INFO 2023-10-31 19:48:32,882 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:48:32,882 views 127.0.0.1 Making Post request to insert student
+ERROR 2023-10-31 19:48:32,883 database_manager Error adding student to the database: 1062 (23000): Duplicate entry '1900394' for key 'PRIMARY'
+INFO 2023-10-31 19:49:37,704 database_manager Connected to the database
+INFO 2023-10-31 19:49:40,662 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:49:42,290 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:50:15,530 database_manager Connected to the database
+INFO 2023-10-31 19:50:15,615 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:50:33,997 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:50:39,935 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:50:41,363 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:50:46,539 database_manager Connected to the database
+INFO 2023-10-31 19:50:48,351 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:51:08,371 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:51:08,779 views 127.0.0.1 is Accessing The module page
+INFO 2023-10-31 19:51:14,779 views 127.0.0.1 is Accessing The module page
+INFO 2023-10-31 19:51:14,779 views 127.0.0.1 Making Post request to insert module
+INFO 2023-10-31 19:51:18,464 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:51:26,699 database_manager Connected to the database
+INFO 2023-10-31 19:51:28,548 views 127.0.0.1 is Accessing The module page
+INFO 2023-10-31 19:52:58,450 database_manager Connected to the database
+INFO 2023-10-31 19:53:01,855 views 127.0.0.1 is Accessing The home page
+INFO 2023-10-31 19:53:02,524 views 127.0.0.1 is Accessing The students page
+INFO 2023-10-31 19:53:12,006 views 127.0.0.1 Making Post request to insert grade
+INFO 2023-10-31 19:53:35,294 database_manager Connected to the database
+INFO 2023-10-31 19:53:35,597 views 127.0.0.1 Making Post request to insert grade
+INFO 2023-10-31 19:54:20,823 views 127.0.0.1 Making Post request to insert grade
+INFO 2023-10-31 19:55:14,577 database_manager Connected to the database
+INFO 2023-10-31 19:55:14,759 views 127.0.0.1 Making Post request to insert grade

@@ -4,7 +4,7 @@ import threading
 from django.http import JsonResponse
 from django.shortcuts import render
 
-from ai_expert_system import database_manager, utility, prolog_controller  # , prolog_controller
+from ai_expert_system import database_manager, utility #prolog_controller
 
 logger = logging.getLogger('ai_expert_system')
 
@@ -16,13 +16,15 @@ def index(request):
     client_ip = request.META['REMOTE_ADDR']
     logger.info(f"{client_ip} is Accessing The home page")
 
+
+
     return render(request, 'index.html')
 
 
 def student(request):
     client_ip = request.META['REMOTE_ADDR']
     logger.info(f"{client_ip} is Accessing The students page")
-    prolog_controller.send_data_to_prolog()
+    #prolog_controller.send_data_to_prolog()
 
     context = {
         'school_list': utility.get_list_of_schools(),
