@@ -39,101 +39,149 @@ def add_student(form_data):
 
 
 def delete_student(form_data):
-    with connection.cursor() as cursor:
-        sql_query = "DELETE FROM student WHERE student_id = %s"
-        cursor.execute(sql_query, [form_data['student_id']])
-        connection.commit()
-    logger.info(" Student was deleted successfully ")
+    try:
+
+        with connection.cursor() as cursor:
+            sql_query = "DELETE FROM student WHERE student_id = %s"
+            cursor.execute(sql_query, [form_data['student_id']])
+            connection.commit()
+        logger.info(" Student was deleted successfully ")
+    except Error as err:
+        logger.error(f"{err}")
+        return
 
 
 def add_module(form_data):
-    with connection.cursor() as cursor:
-        cursor.execute(f"INSERT INTO module (module,no_of_credits)"
-                       f"VALUES {form_data['module_name'], form_data['num_of_credits']}")
-        connection.commit()
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(f"INSERT INTO module (module,no_of_credits)"
+                           f"VALUES {form_data['module_name'], form_data['num_of_credits']}")
+            connection.commit()
+            return
+    except Error as err:
+        logger.error(f"{err}")
         return
 
 
 def update_module(form_data):
-    with connection.cursor() as cursor:
-        cursor.execute(
-            f"UPDATE module SET no_of_credits={int(form_data['num_of_credits'])} WHERE module='{form_data['module_name']}' ")
-        connection.commit()
-    return
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(
+                f"UPDATE module SET no_of_credits={int(form_data['num_of_credits'])} WHERE module='{form_data['module_name']}' ")
+            connection.commit()
+        return
+    except Error as err:
+        logger.error(f"{err}")
+        return
 
 
 def delete_module(form_data):
-    with connection.cursor() as cursor:
-        cursor.execute(f"DELETE FROM module WHERE module='{form_data['module_name']}'")
-    connection.commit()
-
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(f"DELETE FROM module WHERE module='{form_data['module_name']}'")
+        connection.commit()
+    except Error as err:
+        logger.error(f"{err}")
+        return
 
 def get_students():
-    with connection.cursor() as cursor:
-        cursor.execute(f"SELECT * FROM student")
-        records = cursor.fetchall()
-    return records
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(f"SELECT * FROM student")
+            records = cursor.fetchall()
+        return records
+    except Error as err:
+        logger.error(f"{err}")
+        return
 
 
 def get_student_ids():
-    with connection.cursor() as cursor:
-        cursor.execute(f"SELECT student_id FROM student")
-        records = cursor.fetchall()
-        id_list = [record[0] for record in records if record[0] is not None]
-    return id_list
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(f"SELECT student_id FROM student")
+            records = cursor.fetchall()
+            id_list = [record[0] for record in records if record[0] is not None]
+        return id_list
+    except Error as err:
+        logger.error(f"{err}")
+        return
 
 
 def get_modules():
-    with connection.cursor() as cursor:
-        cursor.execute(f"SELECT * FROM module")
-        records = cursor.fetchall()
-    return records
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(f"SELECT * FROM module")
+            records = cursor.fetchall()
+        return records
+    except Error as err:
+        logger.error(f"{err}")
+        return
 
 
 def get_module_names():
-    with connection.cursor() as cursor:
-        cursor.execute(f"SELECT module FROM module")
-        records = cursor.fetchall()
-        module_list = [record[0] for record in records if record[0] is not None]
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(f"SELECT module FROM module")
+            records = cursor.fetchall()
+            module_list = [record[0] for record in records if record[0] is not None]
 
-    return module_list
+        return module_list
+    except Error as err:
+        logger.error(f"{err}")
+        return
 
 
 def add_student_progress(form_data):
-    with connection.cursor() as cursor:
-        sql_query = "INSERT INTO student_progress (module, student_id, academic_year, semester, grade_points) VALUES (%s, %s, %s, %s, %s)"
-        print(form_data)
-        values = (
-            form_data['module_code'],
-            form_data['student_id'],
-            form_data['academic_year'],
-            form_data['semester'],
-            form_data['grade_points'],
-        )
-        print(values)
+    try:
+        with connection.cursor() as cursor:
+            sql_query = "INSERT INTO student_progress (module, student_id, academic_year, semester, grade_points) VALUES (%s, %s, %s, %s, %s)"
+            print(form_data)
+            values = (
+                form_data['module_code'],
+                form_data['student_id'],
+                form_data['academic_year'],
+                form_data['semester'],
+                form_data['grade_points'],
+            )
+            print(values)
 
-        cursor.execute(sql_query, values)
-        connection.commit()
-    return
+            cursor.execute(sql_query, values)
+            connection.commit()
+        return
+    except Error as err:
+        logger.error(f"{err}")
+        return
 
 
 def get_grades():
-    with connection.cursor() as cursor:
-        cursor.execute(f"SELECT * FROM student_progress")
-        records = cursor.fetchall()
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(f"SELECT * FROM student_progress")
+            records = cursor.fetchall()
 
-    return records
+        return records
+    except Error as err:
+        logger.error(f"{err}")
+        return
 
 
 def find_students(form_data):
-    with connection.cursor() as cursor:
-        cursor.execute(f"Select * from Student_progress_view WHERE academic_year='{form_data['academic_year']}'")
-        records = cursor.fetchall()
-    return records
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(f"Select * from Student_progress_view WHERE academic_year='{form_data['academic_year']}'")
+            records = cursor.fetchall()
+        return records
+    except Error as err:
+        logger.error(f"{err}")
+        return
 
 
 def get_all_students_gpa():
-    with connection.cursor() as cursor:
-        cursor.execute(f"Select * from student_gpa_view WHERE grade_points is not null")
-        records = cursor.fetchall()
-    return records
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(f"Select * from student_gpa_view WHERE grade_points is not null")
+            records = cursor.fetchall()
+        return records
+    except Error as err:
+        logger.error(f"{err}")
+        return
