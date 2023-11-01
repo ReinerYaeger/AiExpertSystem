@@ -84,6 +84,7 @@ def delete_module(form_data):
         logger.error(f"{err}")
         return
 
+
 def get_students():
     try:
         with connection.cursor() as cursor:
@@ -153,7 +154,7 @@ def add_student_progress(form_data):
         return
 
 
-def get_grades():
+def get_student_progress():
     try:
         with connection.cursor() as cursor:
             cursor.execute(f"SELECT * FROM student_progress")

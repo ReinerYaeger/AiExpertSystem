@@ -24,10 +24,9 @@ def get_list_of_schools():
     return school_list
 
 
-def alert_system():
+def alert_system(students_on_probation):
     print(5)
-    # This on the first iteration should check all the students on probation and send an email
-
+    #
     # while True:
     #     records = database_manager.get_all_students_gpa()
     #     for record in records:
@@ -41,5 +40,4 @@ def alert_system():
     #             customized_message = customized_message.replace('[Programme]', record[4])
     #             customized_message = customized_message.replace('[School Name]', record[4])
     #
-    # Send email every three months
     #     time.sleep(2629800 * 3)

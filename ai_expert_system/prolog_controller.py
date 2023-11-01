@@ -9,18 +9,11 @@ prolog.consult("prolog/knowledge_base.pl")
 print(prolog.query(list("parent_of('Mark',_)")))
 
 
-def send_data_to_prolog():
+def send_data_to_prolog(student_progress_list):
     try:
 
-        # Query the database to retrieve module details (grade points)
-
-        ##should be in the database manager
-        query = "SELECT module, student_id, academic_year, semester, grade_points FROM student_progress"
-        cursor.execute(query)
-        student_list = cursor.fetchall()
-
         # Iterate through the module details and assert them as facts in Prolog
-        for student in student_list:
+        for student in student_progress_list:
             module, student_id, academic_year, semester, grade_points = student
             prolog.assertz(f"student_progress('{module}', {student_id},{academic_year},{semester}, {grade_points})")
             print(f"Asserted: student_progress({module}', {student_id},{academic_year},{semester}, {grade_points})")

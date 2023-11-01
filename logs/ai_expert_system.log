@@ -372,3 +372,19 @@ INFO 2023-10-31 20:14:54,512 database_manager Connected to the database
 INFO 2023-10-31 20:14:55,725 views 127.0.0.1 is Accessing The students page
 INFO 2023-10-31 20:17:46,682 database_manager Connected to the database
 INFO 2023-10-31 20:19:21,659 database_manager Connected to the database
+INFO 2023-10-31 20:23:12,274 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-10-31 20:23:17,579 views 127.0.0.1 Making Post request to Generate a Report
+ERROR 2023-10-31 20:23:17,580 database_manager 1146 (42S02): Table 'expert_system.student_progress_view' doesn't exist
+INFO 2023-10-31 20:25:43,192 database_manager Connected to the database
+INFO 2023-10-31 20:31:06,932 database_manager Connected to the database
+INFO 2023-10-31 20:53:42,889 database_manager Connected to the database
+INFO 2023-10-31 20:53:48,609 database_manager Connected to the database
+INFO 2023-10-31 20:53:54,522 database_manager Connected to the database
+INFO 2023-10-31 20:54:00,376 database_manager Connected to the database
+INFO 2023-10-31 20:54:06,227 database_manager Connected to the database
+INFO 2023-10-31 20:54:11,966 database_manager Connected to the database
+INFO 2023-10-31 20:54:17,719 database_manager Connected to the database
+INFO 2023-10-31 20:54:23,554 database_manager Connected to the database
+INFO 2023-10-31 20:54:29,291 database_manager Connected to the database
+INFO 2023-10-31 20:54:35,225 database_manager Connected to the database
+INFO 2023-10-31 20:54:41,205 database_manager Connected to the database

@@ -4,7 +4,7 @@ import threading
 from django.http import JsonResponse
 from django.shortcuts import render
 
-from ai_expert_system import database_manager, utility #prolog_controller
+from ai_expert_system import database_manager, utility, prolog_controller  # prolog_controller
 
 logger = logging.getLogger('ai_expert_system')
 
@@ -117,6 +117,9 @@ def generate_report(request):
             'academic_year': request.POST.get('academic_year'),
             'gpa': request.POST.get('gpa'),
         }
+        student_progress_list = database_manager.get_student_progress()
+
+        prolog_controller.send_data_to_prolog(student_progress_list)
 
         context['student_list'].append(database_manager.find_students(form_data))
     return render(request, 'generate_report/generate_report.html', context)
