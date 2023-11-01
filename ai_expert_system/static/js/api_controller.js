@@ -52,8 +52,6 @@ function loadStudentProgress() {
                 studentHtml += '<div>Module Code: ' + grade.module_code + '</div>';
                 studentHtml += '<div>Academic Year: ' + grade.academic_year + '</div>';
                 studentHtml += '<div>Semester: ' + grade.semester + '</div>';
-                studentHtml += '<div>Test 1: ' + grade.test_1 + '</div>';
-                studentHtml += '<div>Test 2: ' + grade.test_2 + '</div>';
                 studentHtml += '<div>Grade Points: ' + grade.grade_points + '</div>';
                 studentHtml += '<br>';
             });

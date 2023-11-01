@@ -6,6 +6,15 @@
         <meta charset="UTF-8" />
         <title>Grades</title>
         <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+        <script>
+            function validateGradePoint(selectElement) {
+                const selectedValue = parseFloat(selectElement.value);
+                if (selectedValue < 0.00 || selectedValue > 4.30) {
+                    alert("Grade Point must be between 0.00 and 4.30");
+                    selectElement.value = ""; // Reset the value
+                }
+            }
+        </script>
     </head>
     <body>
         {% include "navbar.html" %}
@@ -42,6 +51,13 @@
                                 <option value="{{ year }}">{{ year }}</option>
                                 {% endfor %}
                             </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="grade_points">Grade Point </label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="grade_points" name="grade_points" step="0.01" min="0.00" max="4.30" placeholder="Enter grade point">
                         </div>
                     </div>
 

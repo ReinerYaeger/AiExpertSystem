@@ -32,7 +32,7 @@ def add_student(form_data):
             cursor.execute(sql_query)
             connection.commit()
             logger.info("Student was added successfully")
-            return HttpResponse("Student added successfully")
+            return
     except Error as err:
         logger.error(f"Error adding student to the database: {err}")
         return
@@ -101,12 +101,14 @@ def get_module_names():
 
 def add_student_progress(form_data):
     with connection.cursor() as cursor:
-        sql_query = "INSERT INTO student_progress (module, student_id, academic_year, semester) VALUES (%s, %s, %s, %s)"
+        sql_query = "INSERT INTO student_progress (module, student_id, academic_year, semester, grade_points) VALUES (%s, %s, %s, %s, %s)"
+        print(form_data)
         values = (
             form_data['module_code'],
             form_data['student_id'],
             form_data['academic_year'],
             form_data['semester'],
+            form_data['grade_points'],
         )
         print(values)
 

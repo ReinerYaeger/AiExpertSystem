@@ -97,6 +97,7 @@ def grades(request):
             'module_code': request.POST.get('module_code'),
             'academic_year': request.POST.get('academic_year'),
             'semester': request.POST.get('semester'),
+            'grade_points': request.POST.get('grade_points'),
         }
         database_manager.add_student_progress(form_data)
 
