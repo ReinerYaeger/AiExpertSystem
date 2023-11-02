@@ -4,7 +4,7 @@ import threading
 from django.http import JsonResponse
 from django.shortcuts import render
 
-from ai_expert_system import database_manager, utility, prolog_controller  # prolog_controller
+from ai_expert_system import database_manager, utility  # prolog_controller
 
 logger = logging.getLogger('ai_expert_system')
 
@@ -16,15 +16,15 @@ def index(request):
     client_ip = request.META['REMOTE_ADDR']
     logger.info(f"{client_ip} is Accessing The home page")
 
-
-
     return render(request, 'index.html')
 
 
 def student(request):
     client_ip = request.META['REMOTE_ADDR']
     logger.info(f"{client_ip} is Accessing The students page")
-    #prolog_controller.send_data_to_prolog()
+
+
+    # prolog_controller.send_data_to_prolog()
 
     context = {
         'school_list': utility.get_list_of_schools(),
@@ -105,11 +105,12 @@ def grades(request):
 
 
 def generate_report(request):
+
     client_ip = request.META['REMOTE_ADDR']
     logger.info(f"{client_ip} Making Post request to Generate a Report")
     context = {
         'year_list': utility.get_year(),
-        'student_list':[],
+        'student_list': [],
     }
 
     if 'generate_report' in request.POST:
@@ -117,11 +118,16 @@ def generate_report(request):
             'academic_year': request.POST.get('academic_year'),
             'gpa': request.POST.get('gpa'),
         }
+        from ai_expert_system import prolog_controller
+
         student_progress_list = database_manager.get_student_progress()
+        module_list = database_manager.get_modules()
+        student_gpa_list = database_manager.find_students_from_year_or_gpa(form_data)
+        print(student_gpa_list)
 
-        prolog_controller.send_data_to_prolog(student_progress_list)
+        context['student_list'].append(student_gpa_list)
 
-        context['student_list'].append(database_manager.find_students(form_data))
+        prolog_controller.generate_report(form_data,student_progress_list, module_list)
     return render(request, 'generate_report/generate_report.html', context)
 
 
@@ -137,6 +143,7 @@ def query(request):
 
 def get_student_data(request):
     students = database_manager.get_students()  # Retrieve student data from your database_manager
+    print(students)
     formatted_students = []
     for student in students:
         formatted_students.append({
@@ -164,7 +171,7 @@ def get_module_data(request):
 
 
 def get_student_progress_data(request):
-    grade_list = database_manager.get_grades()
+    grade_list = database_manager.get_student_progress()
     formatted_grades = []
 
     for grade in grade_list:

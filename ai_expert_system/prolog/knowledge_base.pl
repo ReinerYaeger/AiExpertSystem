@@ -6,7 +6,7 @@ gpa(StudentID, 1, GPA) :-
     write('Calculating GPA for Semester 1 for Student ID: '), write(StudentID), nl,
     findall(Credits * GradePoints,
             (module_details(Module, Year, 1, StudentID, GradePoints),
-             module_master(Module, Credits)),
+             module(Module, Credits)),
             CreditGradePointList),
 
     # Display the CreditGradePointList
@@ -30,7 +30,7 @@ gpa(StudentID, 2, GPA) :-
     write('Calculating GPA for Semester 2 for Student ID: '), write(StudentID), nl,
     findall(Credits * GradePoints,
             (module_details(Module, Year, 2, StudentID, GradePoints),
-             module_master(Module, Credits)),
+             module(Module, Credits)),
             CreditGradePointList),
 
     % Display the CreditGradePointList
@@ -59,7 +59,7 @@ sum_grade_points([GradePoints | Rest], Total) :-
 sum_credits(Semester, StudentID, TotalCredits) :-
     findall(Credits,
             (module_details(Module, Year, Semester, StudentID, _),
-             module_master(Module, Credits)),
+             module(Module, Credits)),
             CreditsList),
     sum_list(CreditsList, TotalCredits).
 

@@ -1,7 +1,4 @@
-from django.db.backends import mysql
 from pyswip import Prolog
-
-from ai_expert_system import database_manager
 
 prolog = Prolog()
 prolog.consult("prolog/knowledge_base.pl")
@@ -9,30 +6,21 @@ prolog.consult("prolog/knowledge_base.pl")
 print(prolog.query(list("parent_of('Mark',_)")))
 
 
-def send_data_to_prolog(student_progress_list):
+def send_data_to_prolog(student_progress_list, module_list):
     try:
-
         # Iterate through the module details and assert them as facts in Prolog
         for student in student_progress_list:
             module, student_id, academic_year, semester, grade_points = student
             prolog.assertz(f"student_progress('{module}', {student_id},{academic_year},{semester}, {grade_points})")
             print(f"Asserted: student_progress({module}', {student_id},{academic_year},{semester}, {grade_points})")
 
-        # Query the database to retrieve module master data (credits)
-        ##should be in the database manager
-        query = "SELECT module, no_of_credits FROM module"
-        cursor.execute(query)
-        module_master_data = cursor.fetchall()
-
         # Iterate through module master data and assert them as facts in Prolog
-        for module_master_entry in module_master_data:
-            module, num_credits = module_master_entry
-            prolog.assertz(f"module_master('{module}', {no_of_credits})")
-            print(f"Asserted: module_master('{module}', {no_of_credits})")
+        for module_list in module_list:
+            module, num_credits = module_list
+            prolog.assertz(f"module('{module}', {num_credits})")
 
-        print("Data sent to Prolog for calculation.")
-    except mysql.connector.Error as e:
-        print("Error sending data to Prolog:", e)
+    except Exception as e:
+        print(f"Error calculating GPA for Semester {semester}: {e}")
 
 
 def calculate_semester_gpa(student_id, semester):
@@ -65,13 +53,13 @@ def calculate_cumulative_gpa(student_id):
 
 
 # Generate the report
-def generate_report():
+def generate_report(form_data,student_progress_list, module_list):
     try:
         # Send data to Prolog when the program starts
-        send_data_to_prolog()
+        send_data_to_prolog(student_progress_list, module_list)
 
         # Query the database to retrieve student IDs
-        query = f"SELECT DISTINCT student_id FROM student_progress WHERE year = {academic_year}"
+        query = f"SELECT DISTINCT student_id, FROM student_progress WHERE academic_year = {academic_year}"
         cursor.execute(query)
         students = cursor.fetchall()
 

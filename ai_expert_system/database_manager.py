@@ -4,6 +4,8 @@ from mysql.connector import connect, Error
 
 import logging
 
+from mysql.connector.cursor import MySQLCursorDict
+
 logger = logging.getLogger('ai_expert_system')
 
 try:
@@ -166,15 +168,39 @@ def get_student_progress():
         return
 
 
-def find_students(form_data):
+def find_students_from_year_or_gpa(form_data):
     try:
         with connection.cursor() as cursor:
-            cursor.execute(f"Select * from Student_progress_view WHERE academic_year='{form_data['academic_year']}'")
+            if form_data['academic_year'] is not None and form_data['gpa'] is not None:
+                cursor.execute(f"""
+                    SELECT DISTINCT  s.*
+                    FROM student_progress sp
+                    JOIN student s
+                    ON sp.student_id = s.student_id
+                    WHERE sp.academic_year = '{form_data['academic_year']}'
+                    AND sp.grade_points = '{form_data['gpa']}'
+                """)
+            elif form_data['academic_year'] is not None:
+                cursor.execute(f"""
+                    SELECT DISTINCT  s.*
+                    FROM student_progress sp
+                    JOIN student s
+                    ON sp.student_id = s.student_id
+                    WHERE sp.academic_year = '{form_data['academic_year']}'
+                """)
+            elif form_data['gpa'] is not None:
+                cursor.execute(f"""
+                    SELECT DISTINCT s.*
+                    FROM student_progress sp
+                    JOIN student s
+                    ON sp.student_id = s.student_id
+                    WHERE sp.grade_points = '{form_data['gpa']}'
+                """)
             records = cursor.fetchall()
         return records
     except Error as err:
         logger.error(f"{err}")
-        return
+        return None
 
 
 def get_all_students_gpa():
