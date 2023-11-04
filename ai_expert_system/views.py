@@ -4,13 +4,9 @@ from django.http import JsonResponse
 from django.shortcuts import render
 
 from ai_expert_system import database_manager, utility
-from ai_expert_system.prolog import prolog_controller
+#from ai_expert_system.prolog import prolog_controller
 
 logger = logging.getLogger('ai_expert_system')
-
-t1 = threading.Thread(target=utility.alert_system)
-t1.start()
-
 
 def index(request):
     client_ip = request.META['REMOTE_ADDR']
@@ -113,9 +109,15 @@ def generate_report(request):
     }
 
     if 'generate_report' in request.POST:
+        form_gpa = request.POST.get('gpa')
+        try:
+            form_gpa = int(form_gpa)
+        except (TypeError, ValueError):
+            form_gpa = None
+
         form_data = {
             'academic_year': request.POST.get('academic_year'),
-            'gpa': request.POST.get('gpa'),
+            'gpa': form_gpa,
         }
 
         student_progress_list = database_manager.get_student_progress()
@@ -124,8 +126,16 @@ def generate_report(request):
 
         context['student_gpa_list'].append(student_gpa_list)
         context['student_progress_list'].append(student_progress_list)
+        print(student_gpa_list)
+        print(student_progress_list)
 
-        prolog_controller.generate_report(form_data, student_progress_list, module_list)
+        student_email_information = None
+        #  Example of expected format
+        # {'name': 'Jane Doe', 'id': '9876543210', 'gpa': 2.0, 'school': 'Arts', 'program': 'Eng','email': 'jane.doe@example.com'},
+        t1 = threading.Thread(target=utility.alert_system, args=(student_email_information,))
+        t1.start()
+
+        #prolog_controller.generate_report(form_data, student_progress_list, module_list)
         return render(request, 'generate_report/report.html', context)
 
     return render(request, 'generate_report/generate_report.html', context)

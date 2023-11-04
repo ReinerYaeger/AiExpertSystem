@@ -1,4 +1,6 @@
 import datetime
+import smtplib
+from email.mime.text import MIMEText
 import time
 from django.core.mail import send_mail
 
@@ -24,21 +26,56 @@ def get_list_of_schools():
     return school_list
 
 
-def alert_system():
-    #students_on_probation
-    print(5)
-    #
-    # while True:
-    #     records = database_manager.get_all_students_gpa()
-    #     for record in records:
-    #         if float(record[6]) <= 2.2:
-    #
-    #             with open('email_template', 'r') as file:
-    #                 message_template = file.read()
-    #
-    #             customized_message = message_template.replace('[Student Name]', record[1])
-    #             customized_message = message_template.replace('[Student id]', record[0])
-    #             customized_message = customized_message.replace('[Programme]', record[4])
-    #             customized_message = customized_message.replace('[School Name]', record[4])
-    #
-    #     time.sleep(2629800 * 3)
+def send_email(sender_email, sender_password, recipient_email, subject, body):
+    message = MIMEText(body)
+    message['Subject'] = subject
+    message['From'] = sender_email
+    message['To'] = recipient_email
+
+    try:
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(sender_email, sender_password)
+        server.sendmail(sender_email, recipient_email, message.as_string())
+        server.quit()
+        print('Email sent successfully!')
+    except Exception as e:
+        print(f'Error: {e}')
+
+
+def alert_system(student_email_information):
+
+    print(student_email_information)
+    with open('email_template') as f:
+        template = f.read()
+    students = [
+        {'name': 'John Smith', 'id': '1234567890', 'gpa': 2.2, 'school': 'Scit', 'program': 'Fenc',
+            'email': 'john.smith@example.com'},
+        #{'name': 'Jane Doe', 'id': '9876543210', 'gpa': 2.0, 'school': 'Arts', 'program': 'Eng','email': 'jane.doe@example.com'},
+        {'name': 'Peter Jones', 'id': '0123456789', 'gpa': 3.0, 'school': 'Business', 'program': 'BBA',
+            'email': 'peter.jones@example.com'},
+        {'name': 'Mary Johnson', 'id': '8901234567', 'gpa': 1.1, 'school': 'Education', 'program': 'BEd',
+            'email': 'ea@gmail.com'},
+        {'name': 'Susan Williams', 'id': '6789012345', 'gpa': 4.0, 'school': 'Medicine', 'program': 'MBBS',
+            'email': 'susan.williams@example.com'}
+    ]
+    template_copy = None
+    for student in students:
+        template_copy = str(template)
+        for field in ['name', 'id', 'school', 'program', 'gpa']:
+            if field == 'gpa':
+                template_copy = template_copy.replace(f'[{field}]', str(student['gpa']))
+            else:
+                template_copy = template_copy.replace(f'[{field}]', student[field])
+
+    # Replace the placeholders in the email template with the student's information
+    template_copy = template_copy.replace('[Student Name]', student['name'])
+    template_copy = template_copy.replace('[School Name]', student['school'])
+    template_copy = template_copy.replace('[Programme]', student['program'])
+    template_copy = template_copy.replace('[Student id]', student['id'])
+    # Send the email to the student if their GPA is less than or equal to 2.2
+    if student['gpa'] <= 2.2:
+        send_email('artiintel6@gmail.com', 'vnov zbob lkcu hnxy', 'vophqwlgeaihpodwdy@cazlv.com',
+                   'Important Notice: Academic Status Update', template_copy)
+
+        time.sleep(2629800 * 3)

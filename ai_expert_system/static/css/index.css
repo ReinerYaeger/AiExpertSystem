@@ -5,5 +5,8 @@ body {
 form .card {
     background-color: white;
 }
+.background_image{
+    background: url("/static/images/student.jpg");
+}
 
 

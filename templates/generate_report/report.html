@@ -25,14 +25,14 @@
         </tr>
     </thead>
     <tbody>
-        {% for student_details in student_gpa_list %}
+    {% for student in student_progress_list.0 %}
         <tr>
             <td>{{ forloop.counter }}</td>
-            <td>{{ student_details.0.0}}</td>
-            <td>{{ student_details.0.1 }}</td>
-            <td>{{ student_details.0.2 }}</td>
-            <td>{{ student_details.0.3 }}</td>
-            <td>{{ student_details.0.4 }}</td>
+            <td>{{ student.0}}</td>
+            <td>{{ student.1 }}</td>
+            <td>{{ student.2 }}</td>
+            <td>{{ student.3 }}</td>
+            <td>{{ student.4 }}</td>
         </tr>
         {% empty %}
         <tr>
