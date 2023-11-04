@@ -1,0 +1,48 @@
+
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body>
+{% include "navbar.html" %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Student Id</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">GPA Semester 1</th>
+            <th scope="col">GPA Semester 2</th>
+            <th scope="col">Cumulative GPA</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student_details in student_gpa_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ student_details.0.0}}</td>
+            <td>{{ student_details.0.1 }}</td>
+            <td>{{ student_details.0.2 }}</td>
+            <td>{{ student_details.0.3 }}</td>
+            <td>{{ student_details.0.4 }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6">No student details available</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+</body>
+</html>

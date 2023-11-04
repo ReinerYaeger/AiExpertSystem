@@ -24,7 +24,8 @@ def get_list_of_schools():
     return school_list
 
 
-def alert_system(students_on_probation):
+def alert_system():
+    #students_on_probation
     print(5)
     #
     # while True:

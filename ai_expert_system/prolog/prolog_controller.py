@@ -1,9 +1,26 @@
-from pyswip import Prolog
+import mysql
+from pyswip import *
+from mysql.connector import connect, Error, cursor
 
 prolog = Prolog()
 prolog.consult("prolog/knowledge_base.pl")
 
 print(prolog.query(list("parent_of('Mark',_)")))
+try:
+    connection = connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="expert_system"
+
+    )
+    print("Connected to the database")
+
+
+except Error as e:
+    print("Error connecting to the database: %s", e)
+except Exception as e:
+    print("Database connection error: %s", str(e))
 
 
 def send_data_to_prolog(student_progress_list, module_list):
@@ -28,12 +45,12 @@ def calculate_semester_gpa(student_id, semester):
         result = list(prolog.query(f"gpa({student_id}, {semester}, GPA)"))
         if result:
             gpa = result[0]["GPA"]
-            print(f"GPA for Semester {semester}: {gpa}")  # Print the GPA value
+            print(f"Prolog GPA for Semester {semester}: {gpa}")  # Print the GPA value
             return gpa
         else:
             return None
     except Exception as e:
-        print(f"Error calculating GPA for Semester {semester}: {e}")
+        print(f" Prolog Error calculating GPA for Semester {semester}: {e}")
         return None
 
 
@@ -43,17 +60,17 @@ def calculate_cumulative_gpa(student_id):
         result = list(prolog.query(f'cumulative_gpa({student_id}, GPA)'))
         if result:
             cumulative_gpa = result[0]['GPA']
-            print(f"Cumulative GPA for Student {student_id}: {cumulative_gpa}")  # Print the Cumulative GPA value
+            print(f" Prolog Cumulative GPA for Student {student_id}: {cumulative_gpa}")  # Print the Cumulative GPA value
             return cumulative_gpa
         else:
             return None
     except Exception as e:
-        print(f"Error calculating cumulative GPA for Student {student_id}: {e}")
+        print(f" Prolog Error calculating cumulative GPA for Student {student_id}: {e}")
         return e
 
 
 # Generate the report
-def generate_report(form_data,student_progress_list, module_list):
+def generate_report(form_data, student_progress_list, module_list):
     try:
         # Send data to Prolog when the program starts
         send_data_to_prolog(student_progress_list, module_list)
@@ -80,10 +97,10 @@ def generate_report(form_data,student_progress_list, module_list):
                 cumulative_gpa = calculate_cumulative_gpa(student_id)
 
                 if gpa_semester_1 is not None and gpa_semester_2 is not None and cumulative_gpa is not None:
-                    result_text.insert(tk.END,
-                                       f"{student_id}\t{student_name}\t{gpa_semester_1:.2f}\t{gpa_semester_2:.2f}\t{cumulative_gpa:.2f}\n")
+                    print(
+                        f"Prolog: {student_id}\t{student_name}\t{gpa_semester_1:.2f}\t{gpa_semester_2:.2f}\t{cumulative_gpa:.2f}\n")
                 else:
-                    result_text.insert(tk.END, f"Error calculating GPA for Student {student_id}\n")
+                    print(f" Prolog Error calculating GPA for Student {student_id}\n")
     except ValueError:
         print("Invalid input. Please enter a valid year and target GPA.\n")
     except mysql.connector.Error as e:

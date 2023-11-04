@@ -388,3 +388,118 @@ INFO 2023-10-31 20:54:23,554 database_manager Connected to the database
 INFO 2023-10-31 20:54:29,291 database_manager Connected to the database
 INFO 2023-10-31 20:54:35,225 database_manager Connected to the database
 INFO 2023-10-31 20:54:41,205 database_manager Connected to the database
+ERROR 2023-11-04 15:38:30,568 database_manager Error connecting to the database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+INFO 2023-11-04 15:38:57,596 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-04 15:38:58,759 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 15:39:13,004 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 15:39:14,098 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 15:39:40,258 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 15:39:40,898 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 15:39:41,591 views 127.0.0.1 Making Post request to Generate a Report
+ERROR 2023-11-04 15:43:49,119 database_manager Error connecting to the database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+INFO 2023-11-04 15:43:49,234 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 15:43:50,713 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 15:44:02,521 views 127.0.0.1 Making Post request to Generate a Report
+ERROR 2023-11-04 15:44:07,828 database_manager Error connecting to the database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+INFO 2023-11-04 15:44:10,089 views 127.0.0.1 Making Post request to Generate a Report
+ERROR 2023-11-04 15:44:58,231 database_manager Error connecting to the database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+INFO 2023-11-04 15:47:43,177 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 15:49:09,555 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 15:49:15,412 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 15:49:39,721 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 15:50:10,578 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 15:50:13,149 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 15:50:13,752 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 15:50:14,123 views 127.0.0.1 Making Post request to Generate a Report
+ERROR 2023-11-04 15:56:45,719 database_manager Error connecting to the database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+INFO 2023-11-04 15:56:49,074 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-04 15:56:51,965 views 127.0.0.1 Making Post request to Generate a Report
+ERROR 2023-11-04 15:57:38,926 database_manager Error connecting to the database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+INFO 2023-11-04 16:09:41,236 database_manager Connected to the database
+INFO 2023-11-04 16:14:47,546 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:19:15,779 database_manager Connected to the database
+INFO 2023-11-04 16:19:16,025 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:19:17,214 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:29:39,559 database_manager Connected to the database
+INFO 2023-11-04 16:29:43,633 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:36:05,041 database_manager Connected to the database
+INFO 2023-11-04 16:36:08,706 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-04 16:36:11,086 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:36:12,373 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:36:17,167 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:36:27,249 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:38:06,002 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:40:30,501 database_manager Connected to the database
+INFO 2023-11-04 16:40:33,117 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-04 16:40:35,566 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:40:39,765 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:41:20,592 database_manager Connected to the database
+INFO 2023-11-04 16:41:41,643 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:42:16,577 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:42:44,752 database_manager Connected to the database
+INFO 2023-11-04 16:42:45,211 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:43:02,196 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:43:21,330 database_manager Connected to the database
+INFO 2023-11-04 16:43:26,620 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:44:08,204 database_manager Connected to the database
+INFO 2023-11-04 16:44:10,405 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:44:14,218 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:44:39,582 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:46:12,304 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:46:23,992 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:46:26,821 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:57:17,888 database_manager Connected to the database
+INFO 2023-11-04 16:57:19,413 views 127.0.0.1 is Accessing The home page
+ERROR 2023-11-04 16:57:21,778 database_manager MySQL Connection not available.
+ERROR 2023-11-04 16:57:21,780 database_manager 2014 (HY000): Commands out of sync; you can't run this command now
+INFO 2023-11-04 16:57:24,270 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:57:27,905 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:58:03,223 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 16:58:35,407 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 17:00:01,892 database_manager Connected to the database
+INFO 2023-11-04 17:00:04,549 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-04 17:00:06,669 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 17:00:09,862 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 17:02:48,055 database_manager Connected to the database
+INFO 2023-11-04 17:03:00,402 database_manager Connected to the database
+INFO 2023-11-04 17:03:03,057 database_manager Connected to the database
+INFO 2023-11-04 17:03:05,791 database_manager Connected to the database
+INFO 2023-11-04 17:03:08,345 database_manager Connected to the database
+INFO 2023-11-04 17:03:11,082 database_manager Connected to the database
+INFO 2023-11-04 17:03:13,785 database_manager Connected to the database
+INFO 2023-11-04 17:03:16,555 database_manager Connected to the database
+INFO 2023-11-04 17:03:31,990 database_manager Connected to the database
+INFO 2023-11-04 17:03:44,780 database_manager Connected to the database
+INFO 2023-11-04 17:03:51,907 database_manager Connected to the database
+INFO 2023-11-04 17:04:21,773 database_manager Connected to the database
+INFO 2023-11-04 17:04:24,520 database_manager Connected to the database
+INFO 2023-11-04 17:04:27,281 database_manager Connected to the database
+INFO 2023-11-04 17:04:29,995 database_manager Connected to the database
+INFO 2023-11-04 17:04:32,721 database_manager Connected to the database
+INFO 2023-11-04 17:04:35,378 database_manager Connected to the database
+INFO 2023-11-04 17:04:37,996 database_manager Connected to the database
+INFO 2023-11-04 17:04:40,705 database_manager Connected to the database
+INFO 2023-11-04 17:04:43,395 database_manager Connected to the database
+INFO 2023-11-04 17:04:46,230 database_manager Connected to the database
+INFO 2023-11-04 17:04:48,952 database_manager Connected to the database
+INFO 2023-11-04 17:04:51,610 database_manager Connected to the database
+INFO 2023-11-04 17:04:54,385 database_manager Connected to the database
+INFO 2023-11-04 17:04:57,019 database_manager Connected to the database
+INFO 2023-11-04 17:04:59,725 database_manager Connected to the database
+INFO 2023-11-04 17:05:02,368 database_manager Connected to the database
+INFO 2023-11-04 17:05:05,053 database_manager Connected to the database
+INFO 2023-11-04 17:05:07,689 database_manager Connected to the database
+INFO 2023-11-04 17:05:10,324 database_manager Connected to the database
+INFO 2023-11-04 17:05:13,008 database_manager Connected to the database
+INFO 2023-11-04 17:05:15,664 database_manager Connected to the database
+INFO 2023-11-04 17:05:18,328 database_manager Connected to the database
+INFO 2023-11-04 17:05:20,827 database_manager Connected to the database
+INFO 2023-11-04 17:05:23,251 database_manager Connected to the database
+INFO 2023-11-04 17:05:25,726 database_manager Connected to the database
+INFO 2023-11-04 17:05:28,233 database_manager Connected to the database
+INFO 2023-11-04 17:05:30,782 database_manager Connected to the database
+INFO 2023-11-04 17:05:33,207 database_manager Connected to the database
+INFO 2023-11-04 17:05:35,608 database_manager Connected to the database
+INFO 2023-11-04 17:05:38,054 database_manager Connected to the database
+INFO 2023-11-04 17:05:40,599 database_manager Connected to the database
+INFO 2023-11-04 17:05:43,180 database_manager Connected to the database

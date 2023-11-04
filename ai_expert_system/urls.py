@@ -8,6 +8,7 @@ urlpatterns = [
     path('module/', views.module, name='module'),
     path('grades/', views.grades, name='grades'),
     path('generate_report/', views.generate_report, name='generate_report'),
+    path('report/', views.report_page, name='report'),
     path('query/', views.query, name='query'),
 
     path('get_student_data/', views.get_student_data, name='get_student_data'),
