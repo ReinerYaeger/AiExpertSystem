@@ -173,7 +173,7 @@ def find_students_from_year_or_gpa(form_data):
         with connection.cursor() as cursor:
             if form_data['academic_year'] is not None and form_data['gpa'] is not None:
                 cursor.execute(f"""
-                    SELECT DISTINCT  s.*
+                    SELECT DISTINCT  s.*,  sp.grade_points
                     FROM student_progress sp
                     JOIN student s
                     ON sp.student_id = s.student_id
@@ -182,7 +182,7 @@ def find_students_from_year_or_gpa(form_data):
                 """)
             elif form_data['academic_year'] is not None:
                 cursor.execute(f"""
-                    SELECT DISTINCT  s.*
+                    SELECT DISTINCT  s.*,  sp.grade_points
                     FROM student_progress sp
                     JOIN student s
                     ON sp.student_id = s.student_id
@@ -190,7 +190,7 @@ def find_students_from_year_or_gpa(form_data):
                 """)
             elif form_data['gpa'] is not None:
                 cursor.execute(f"""
-                    SELECT DISTINCT s.*
+                    SELECT DISTINCT s.*,  sp.grade_points
                     FROM student_progress sp
                     JOIN student s
                     ON sp.student_id = s.student_id
