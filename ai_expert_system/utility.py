@@ -43,11 +43,21 @@ def send_email(sender_email, sender_password, recipient_email, subject, body):
         print(f'Error: {e}')
 
 
-def alert_system(student_email_information):
+def alert_system():
 
-    print(student_email_information)
-    with open('email_template') as f:
-        template = f.read()
+    #print(student_email_information)
+
+    template = """
+            Dear [Student Name] [Student id],
+            [Programme] [School Name]
+            I hope this message finds you well.
+            Upon recent evaluation of academic performance, it has been determined that [School Name] has fallen below the expected academic standards. As a result, the student is now placed on academic probation.
+            We believe in the potential of every student and are dedicated to assisting them in achieving their academic goals. To this end, the university provides additional resources, including tutoring services and counseling, to support students during their studies. We encourage the student in question to take advantage of these resources and work closely with their advisor to create a plan for improvement.
+            We appreciate your understanding and cooperation in this matter. Please remember that our collective efforts play a crucial role in ensuring the success of every student within our institution.
+            If you have any questions or concerns, please do not hesitate to reach out to the Academic Affairs Office.
+            Best regards, 
+            """
+
     students = [
         {'name': 'John Smith', 'id': '1234567890', 'gpa': 2.2, 'school': 'Scit', 'program': 'Fenc',
             'email': 'john.smith@example.com'},
@@ -60,6 +70,7 @@ def alert_system(student_email_information):
             'email': 'susan.williams@example.com'}
     ]
     template_copy = None
+
     for student in students:
         template_copy = str(template)
         for field in ['name', 'id', 'school', 'program', 'gpa']:
@@ -68,14 +79,14 @@ def alert_system(student_email_information):
             else:
                 template_copy = template_copy.replace(f'[{field}]', student[field])
 
-    # Replace the placeholders in the email template with the student's information
-    template_copy = template_copy.replace('[Student Name]', student['name'])
-    template_copy = template_copy.replace('[School Name]', student['school'])
-    template_copy = template_copy.replace('[Programme]', student['program'])
-    template_copy = template_copy.replace('[Student id]', student['id'])
+        # Replace the placeholders in the email template with the student's information
+        template_copy = template_copy.replace('[Student Name]', student['name'])
+        template_copy = template_copy.replace('[School Name]', student['school'])
+        template_copy = template_copy.replace('[Programme]', student['program'])
+        template_copy = template_copy.replace('[Student id]', student['id'])
     # Send the email to the student if their GPA is less than or equal to 2.2
-    if student['gpa'] <= 2.2:
-        send_email('artiintel6@gmail.com', 'vnov zbob lkcu hnxy', 'vophqwlgeaihpodwdy@cazlv.com',
-                   'Important Notice: Academic Status Update', template_copy)
+        if student['gpa'] <= 2.2:
+            send_email('artiintel6@gmail.com', 'vnov zbob lkcu hnxy', 'osnhysjsxqejezpouu@cazlq.com',
+                       'Important Notice: Academic Status Update', template_copy)
 
-        time.sleep(2629800 * 3)
+    time.sleep(26298 * 3)

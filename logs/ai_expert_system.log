@@ -726,3 +726,112 @@ INFO 2023-11-04 19:25:49,776 views 127.0.0.1 Making Post request to Generate a R
 INFO 2023-11-04 19:30:44,059 database_manager Connected to the database
 INFO 2023-11-04 19:30:48,202 views 127.0.0.1 Making Post request to Generate a Report
 INFO 2023-11-04 19:30:51,890 views 127.0.0.1 Making Post request to Generate a Report
+ERROR 2023-11-04 21:41:20,354 database_manager Error connecting to the database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+INFO 2023-11-04 21:41:22,080 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-04 21:41:23,319 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:41:25,019 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:42:04,070 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:42:07,160 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:42:09,054 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:45:37,154 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:45:38,264 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:45:39,967 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:45:46,367 database_manager Connected to the database
+INFO 2023-11-04 21:45:46,804 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:47:01,077 database_manager Connected to the database
+INFO 2023-11-04 21:48:58,339 database_manager Connected to the database
+INFO 2023-11-04 21:49:19,117 database_manager Connected to the database
+INFO 2023-11-04 21:49:21,728 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-04 21:49:25,920 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:49:29,372 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:50:26,339 database_manager Connected to the database
+INFO 2023-11-04 21:50:28,842 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:50:34,184 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:51:24,547 database_manager Connected to the database
+INFO 2023-11-04 21:51:24,946 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:51:28,233 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:51:55,003 database_manager Connected to the database
+INFO 2023-11-04 21:58:51,475 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 21:58:55,613 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-04 22:11:01,789 database_manager Connected to the database
+ERROR 2023-11-05 10:02:15,083 database_manager Error connecting to the database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+INFO 2023-11-05 10:02:16,475 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-05 10:02:17,999 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:02:20,559 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:02:33,301 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:02:34,703 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:02:35,588 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:02:38,525 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:02:39,435 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:02:41,132 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-05 10:02:42,250 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:02:43,144 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:02:50,947 database_manager Connected to the database
+INFO 2023-11-05 10:02:53,184 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:02:54,484 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:02:56,788 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:03:31,033 database_manager Connected to the database
+INFO 2023-11-05 10:03:32,835 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:03:35,302 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:04:01,220 database_manager Connected to the database
+INFO 2023-11-05 10:04:03,527 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:04:06,132 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:04:43,348 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:05:59,713 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:06:01,819 database_manager Connected to the database
+INFO 2023-11-05 10:06:02,441 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:07:14,460 database_manager Connected to the database
+INFO 2023-11-05 10:07:14,709 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:07:17,279 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:07:38,535 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:11:40,194 database_manager Connected to the database
+INFO 2023-11-05 10:11:41,506 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-05 10:11:42,536 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 10:11:44,654 views 127.0.0.1 Making Post request to Generate a Report
+ERROR 2023-11-05 13:33:19,021 database_manager Error connecting to the database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+INFO 2023-11-05 13:33:21,434 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-05 13:33:24,029 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 13:33:27,402 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 13:33:45,911 database_manager Connected to the database
+INFO 2023-11-05 13:33:47,600 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 13:33:49,032 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 13:51:52,293 database_manager Connected to the database
+INFO 2023-11-05 13:51:53,606 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 13:51:57,185 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 13:52:25,358 database_manager Connected to the database
+INFO 2023-11-05 13:52:30,441 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 13:52:34,869 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:04:32,751 database_manager Connected to the database
+INFO 2023-11-05 14:04:48,129 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-05 14:04:50,121 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:04:52,703 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:05:13,164 database_manager Connected to the database
+INFO 2023-11-05 14:05:14,744 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-05 14:05:17,015 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:05:19,322 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:07:07,016 database_manager Connected to the database
+INFO 2023-11-05 14:07:09,633 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:07:46,868 database_manager Connected to the database
+INFO 2023-11-05 14:07:47,134 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:09:44,993 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:09:47,633 database_manager Connected to the database
+INFO 2023-11-05 14:09:50,386 database_manager Connected to the database
+INFO 2023-11-05 14:09:51,781 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-05 14:09:54,432 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:09:56,575 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:10:10,045 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:10:11,416 database_manager Connected to the database
+INFO 2023-11-05 14:10:13,185 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:10:17,981 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:10:20,284 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:10:42,853 database_manager Connected to the database
+INFO 2023-11-05 14:10:46,987 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:10:49,463 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:11:41,573 database_manager Connected to the database
+INFO 2023-11-05 14:11:51,404 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-05 14:11:53,227 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:11:56,048 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:12:09,879 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:12:12,230 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:12:15,297 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:12:19,899 views 127.0.0.1 Making Post request to Generate a Report

@@ -138,9 +138,14 @@ def generate_report(request):
         #  Example of expected format
         # {'name': 'Jane Doe', 'id': '9876543210', 'gpa': 2.0, 'school': 'Arts', 'program': 'Eng','email': 'jane.doe@example.com'},
 
-        t1 = threading.Thread(target=utility.alert_system, args=(student_email_information,))
-        t1.start()
+        #utility.alert_system()
+        try:
+            t1 = threading.Thread(target=utility.alert_system,) #args=(student_email_information,))
+            t1.start()
+        except Exception as e:
+            print(e)
 
+        print("running thread")
         # prolog_controller.generate_report(form_data, student_progress_list, module_list)
         return render(request, 'generate_report/report.html', context)
 
