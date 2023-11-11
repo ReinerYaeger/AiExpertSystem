@@ -173,10 +173,12 @@ def find_students_from_year_or_gpa(form_data):
         with connection.cursor() as cursor:
             if form_data['academic_year'] is not None and form_data['gpa'] is not None:
                 cursor.execute(f"""
-                    SELECT   sp.student_id,sp.grade_points,sp.semester, m.no_of_credits
+                    SELECT   sp.student_id,s.student_name,sp.grade_points,sp.semester, m.no_of_credits
                     FROM student_progress sp
                     JOIN module m
                     ON sp.module = m.module
+                    JOIN student s 
+                    ON sp.student_id = s.student_id
                     WHERE sp.academic_year = '{form_data['academic_year']}'
                     AND sp.grade_points <= {form_data['gpa']}
                 
@@ -184,10 +186,12 @@ def find_students_from_year_or_gpa(form_data):
 
             elif form_data['academic_year'] is not None:
                 cursor.execute(f"""
-                   SELECT   sp.student_id,sp.grade_points,sp.semester, m.no_of_credits
+                   SELECT   sp.student_id,s.student_name,sp.grade_points,sp.semester, m.no_of_credits
                     FROM student_progress sp
                     JOIN module m
                     ON sp.module = m.module
+                    JOIN student s 
+                    ON sp.student_id = s.student_id
                     WHERE sp.academic_year = '{form_data['academic_year']}'
                 """)
             records = cursor.fetchall()

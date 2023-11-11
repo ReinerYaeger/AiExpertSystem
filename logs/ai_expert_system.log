@@ -1029,3 +1029,41 @@ INFO 2023-11-11 16:53:43,030 views 127.0.0.1 Making Post request to Generate a R
 INFO 2023-11-11 16:54:34,268 database_manager Connected to the database
 INFO 2023-11-11 16:54:45,356 views 127.0.0.1 Making Post request to Generate a Report
 INFO 2023-11-11 16:54:47,729 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 17:50:49,394 database_manager Connected to the database
+INFO 2023-11-11 17:50:54,064 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-11 17:50:55,569 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-11 17:50:56,593 views 127.0.0.1 is Accessing The students page
+INFO 2023-11-11 17:50:58,467 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 17:51:00,822 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 17:53:01,318 database_manager Connected to the database
+INFO 2023-11-11 17:53:26,557 database_manager Connected to the database
+INFO 2023-11-11 17:53:38,084 database_manager Connected to the database
+INFO 2023-11-11 17:53:51,777 database_manager Connected to the database
+INFO 2023-11-11 17:53:52,819 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-11 17:53:54,016 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 17:53:56,007 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 17:54:40,229 database_manager Connected to the database
+INFO 2023-11-11 17:54:40,374 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 17:54:42,463 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 17:54:59,322 database_manager Connected to the database
+INFO 2023-11-11 17:55:02,017 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 17:55:33,910 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 17:55:40,638 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 17:55:47,096 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 17:56:49,668 database_manager Connected to the database
+INFO 2023-11-11 18:01:40,762 database_manager Connected to the database
+INFO 2023-11-11 18:02:59,718 database_manager Connected to the database
+INFO 2023-11-11 18:05:22,739 database_manager Connected to the database
+INFO 2023-11-11 18:05:49,963 database_manager Connected to the database
+INFO 2023-11-11 18:06:49,337 database_manager Connected to the database
+INFO 2023-11-11 18:08:02,776 database_manager Connected to the database
+INFO 2023-11-11 18:08:31,153 database_manager Connected to the database
+INFO 2023-11-11 18:10:48,827 database_manager Connected to the database
+INFO 2023-11-11 18:13:31,897 database_manager Connected to the database
+INFO 2023-11-11 18:13:40,304 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 18:13:42,253 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 18:14:15,701 database_manager Connected to the database
+INFO 2023-11-11 18:14:16,083 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 18:14:18,761 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 18:15:35,627 database_manager Connected to the database
+INFO 2023-11-11 18:15:37,316 views 127.0.0.1 Making Post request to Generate a Report
