@@ -13,6 +13,8 @@
 </head>
 <body>
 {% include "navbar.html" %}
+
+<button id="print" onclick="window.print()" style="display: block; margin: 0 auto;" class="btn btn-primary" name="generate_report">Print This Page</button>
 <table class="table">
     <thead>
         <tr>
@@ -25,7 +27,7 @@
         </tr>
     </thead>
     <tbody>
-    {% for student in student_progress_list.0 %}
+    {% for student in student_gpa_list.0 %}
         <tr>
             <td>{{ forloop.counter }}</td>
             <td>{{ student.0}}</td>

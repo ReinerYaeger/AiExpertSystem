@@ -43,7 +43,7 @@ def send_email(sender_email, sender_password, recipient_email, subject, body):
         print(f'Error: {e}')
 
 
-def alert_system():
+def alert_system(students):
 
     #print(student_email_information)
 
@@ -58,17 +58,6 @@ def alert_system():
             Best regards, 
             """
 
-    students = [
-        {'name': 'John Smith', 'id': '1234567890', 'gpa': 2.2, 'school': 'Scit', 'program': 'Fenc',
-            'email': 'john.smith@example.com'},
-        #{'name': 'Jane Doe', 'id': '9876543210', 'gpa': 2.0, 'school': 'Arts', 'program': 'Eng','email': 'jane.doe@example.com'},
-        {'name': 'Peter Jones', 'id': '0123456789', 'gpa': 3.0, 'school': 'Business', 'program': 'BBA',
-            'email': 'peter.jones@example.com'},
-        {'name': 'Mary Johnson', 'id': '8901234567', 'gpa': 1.1, 'school': 'Education', 'program': 'BEd',
-            'email': 'ea@gmail.com'},
-        {'name': 'Susan Williams', 'id': '6789012345', 'gpa': 4.0, 'school': 'Medicine', 'program': 'MBBS',
-            'email': 'susan.williams@example.com'}
-    ]
     template_copy = None
 
     for student in students:

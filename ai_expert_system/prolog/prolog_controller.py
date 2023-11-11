@@ -3,7 +3,7 @@ from pyswip import *
 from mysql.connector import connect, Error, cursor
 
 prolog = Prolog()
-prolog.consult("prolog/knowledge_base.pl")
+prolog.consult("AiExpertSystem\ai_expert_system\staticknowledge_base.pl")
 
 print(prolog.query(list("parent_of('Mark',_)")))
 try:
@@ -60,7 +60,8 @@ def calculate_cumulative_gpa(student_id):
         result = list(prolog.query(f'cumulative_gpa({student_id}, GPA)'))
         if result:
             cumulative_gpa = result[0]['GPA']
-            print(f" Prolog Cumulative GPA for Student {student_id}: {cumulative_gpa}")  # Print the Cumulative GPA value
+            print(
+                f" Prolog Cumulative GPA for Student {student_id}: {cumulative_gpa}")  # Print the Cumulative GPA value
             return cumulative_gpa
         else:
             return None

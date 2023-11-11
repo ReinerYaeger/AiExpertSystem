@@ -835,3 +835,197 @@ INFO 2023-11-05 14:12:09,879 views 127.0.0.1 Making Post request to Generate a R
 INFO 2023-11-05 14:12:12,230 views 127.0.0.1 Making Post request to Generate a Report
 INFO 2023-11-05 14:12:15,297 views 127.0.0.1 Making Post request to Generate a Report
 INFO 2023-11-05 14:12:19,899 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:15:46,835 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:17:26,150 database_manager Connected to the database
+INFO 2023-11-05 14:17:28,545 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:17:31,339 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:17:36,906 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:21:49,986 database_manager Connected to the database
+INFO 2023-11-05 14:21:50,359 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:21:53,399 views 127.0.0.1 Making Post request to Generate a Report
+ERROR 2023-11-05 14:21:53,401 database_manager 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 6
+INFO 2023-11-05 14:22:03,147 database_manager Connected to the database
+INFO 2023-11-05 14:22:06,654 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:22:10,567 views 127.0.0.1 Making Post request to Generate a Report
+ERROR 2023-11-05 14:22:10,570 database_manager 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 6
+INFO 2023-11-05 14:23:31,402 database_manager Connected to the database
+INFO 2023-11-05 14:23:36,021 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-05 14:23:39,230 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:23:42,558 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:23:52,746 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:24:00,072 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-05 14:26:16,004 database_manager Connected to the database
+INFO 2023-11-06 18:09:46,058 database_manager Connected to the database
+INFO 2023-11-06 18:09:52,601 database_manager Connected to the database
+INFO 2023-11-06 18:10:16,197 database_manager Connected to the database
+INFO 2023-11-06 18:10:28,074 database_manager Connected to the database
+INFO 2023-11-06 18:11:57,044 database_manager Connected to the database
+INFO 2023-11-06 18:11:59,556 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-06 18:11:59,702 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-06 18:12:00,827 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-06 18:12:04,870 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-06 18:15:15,737 database_manager Connected to the database
+INFO 2023-11-06 18:35:19,970 database_manager Connected to the database
+INFO 2023-11-06 18:35:21,782 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-06 18:35:23,404 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-06 18:35:23,940 views 127.0.0.1 is Accessing The students page
+INFO 2023-11-06 18:35:26,880 views 127.0.0.1 is Accessing The module page
+ERROR 2023-11-06 18:35:27,208 database_manager MySQL Connection not available.
+ERROR 2023-11-06 18:35:27,208 database_manager 2014 (HY000): Commands out of sync; you can't run this command now
+ERROR 2023-11-06 18:35:27,688 database_manager MySQL Connection not available.
+ERROR 2023-11-06 18:35:27,688 database_manager MySQL Connection not available.
+ERROR 2023-11-06 18:35:27,688 database_manager 2014 (HY000): Commands out of sync; you can't run this command now
+INFO 2023-11-06 18:35:27,948 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-06 18:35:32,865 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-06 18:36:34,520 database_manager Connected to the database
+INFO 2023-11-06 18:37:00,034 database_manager Connected to the database
+ERROR 2023-11-07 14:26:31,233 database_manager Error connecting to the database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+INFO 2023-11-07 14:26:32,918 views 127.0.0.1 is Accessing The home page
+ERROR 2023-11-07 14:29:10,551 database_manager Error connecting to the database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+ERROR 2023-11-09 23:34:16,233 database_manager Error connecting to the database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+ERROR 2023-11-09 23:34:25,943 database_manager Error connecting to the database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+ERROR 2023-11-09 23:35:17,470 database_manager Error connecting to the database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+INFO 2023-11-11 16:01:21,170 database_manager Connected to the database
+INFO 2023-11-11 16:01:30,826 database_manager Connected to the database
+INFO 2023-11-11 16:01:32,182 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-11 16:01:34,744 views 127.0.0.1 is Accessing The students page
+ERROR 2023-11-11 16:01:35,133 database_manager 2013 (HY000): Lost connection to MySQL server during query
+ERROR 2023-11-11 16:01:35,133 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:01:35,136 database_manager MySQL Connection not available.
+INFO 2023-11-11 16:02:19,352 database_manager Connected to the database
+INFO 2023-11-11 16:02:20,138 views 127.0.0.1 is Accessing The students page
+INFO 2023-11-11 16:02:32,092 database_manager Connected to the database
+INFO 2023-11-11 16:02:35,423 views 127.0.0.1 is Accessing The students page
+ERROR 2023-11-11 16:02:35,659 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:02:35,660 database_manager 2013 (HY000): Lost connection to MySQL server during query
+INFO 2023-11-11 16:03:17,306 views 127.0.0.1 is Accessing The students page
+ERROR 2023-11-11 16:03:17,510 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:03:17,511 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:03:17,523 database_manager MySQL Connection not available.
+INFO 2023-11-11 16:03:18,465 database_manager Connected to the database
+INFO 2023-11-11 16:03:21,310 views 127.0.0.1 is Accessing The students page
+ERROR 2023-11-11 16:03:21,531 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:03:21,531 database_manager 2013 (HY000): Lost connection to MySQL server during query
+INFO 2023-11-11 16:04:16,012 database_manager Connected to the database
+INFO 2023-11-11 16:04:34,039 views 127.0.0.1 is Accessing The students page
+INFO 2023-11-11 16:04:34,039 views 127.0.0.1 Making Post request to insert student
+INFO 2023-11-11 16:04:34,043 database_manager Student was added successfully
+INFO 2023-11-11 16:04:55,450 views 127.0.0.1 is Accessing The module page
+ERROR 2023-11-11 16:04:55,673 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:04:55,673 database_manager 2014 (HY000): Commands out of sync; you can't run this command now
+INFO 2023-11-11 16:05:03,130 views 127.0.0.1 is Accessing The module page
+INFO 2023-11-11 16:05:03,130 views 127.0.0.1 Making Post request to insert module
+ERROR 2023-11-11 16:05:03,358 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:05:03,359 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:05:03,359 database_manager 2014 (HY000): Commands out of sync; you can't run this command now
+INFO 2023-11-11 16:05:27,736 views 127.0.0.1 is Accessing The module page
+INFO 2023-11-11 16:05:27,737 views 127.0.0.1 Making Post request to insert module
+ERROR 2023-11-11 16:05:27,737 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:05:27,934 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:05:27,934 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:05:27,936 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:05:52,654 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:05:52,655 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:05:52,903 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:05:52,904 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:05:52,904 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:05:57,367 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:05:57,367 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:05:57,563 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:05:57,564 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:05:57,564 database_manager MySQL Connection not available.
+INFO 2023-11-11 16:06:05,122 database_manager Connected to the database
+INFO 2023-11-11 16:06:20,149 views 127.0.0.1 Making Post request to insert grade
+ERROR 2023-11-11 16:06:20,359 database_manager MySQL Connection not available.
+ERROR 2023-11-11 16:06:20,359 database_manager 2014 (HY000): Commands out of sync; you can't run this command now
+INFO 2023-11-11 16:06:40,566 database_manager Connected to the database
+INFO 2023-11-11 16:06:54,126 database_manager Connected to the database
+INFO 2023-11-11 16:06:54,378 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-11 16:06:56,673 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-11 16:06:58,415 views 127.0.0.1 is Accessing The students page
+INFO 2023-11-11 16:07:00,165 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:07:02,178 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:07:24,737 database_manager Connected to the database
+INFO 2023-11-11 16:10:11,012 database_manager Connected to the database
+INFO 2023-11-11 16:10:53,471 database_manager Connected to the database
+INFO 2023-11-11 16:10:54,817 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:12:11,221 database_manager Connected to the database
+INFO 2023-11-11 16:12:12,734 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:12:15,574 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:14:14,826 database_manager Connected to the database
+INFO 2023-11-11 16:16:26,294 database_manager Connected to the database
+INFO 2023-11-11 16:19:53,479 database_manager Connected to the database
+INFO 2023-11-11 16:20:06,853 database_manager Connected to the database
+INFO 2023-11-11 16:20:07,060 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:21:52,201 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:22:16,760 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:22:33,056 views 127.0.0.1 Making Post request to insert grade
+INFO 2023-11-11 16:22:41,813 views 127.0.0.1 Making Post request to insert grade
+INFO 2023-11-11 16:22:43,240 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:22:45,792 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:24:07,199 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:24:09,236 views 127.0.0.1 is Accessing The module page
+INFO 2023-11-11 16:24:09,622 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-11 16:24:10,152 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-11 16:24:11,165 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-11 16:25:25,072 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:25:26,206 views 127.0.0.1 is Accessing The module page
+INFO 2023-11-11 16:25:27,133 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:27:49,596 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:28:37,579 database_manager Connected to the database
+INFO 2023-11-11 16:28:37,818 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:28:40,629 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:30:04,938 database_manager Connected to the database
+INFO 2023-11-11 16:30:05,933 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:30:08,286 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:33:50,886 database_manager Connected to the database
+INFO 2023-11-11 16:33:54,129 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:33:56,436 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:34:11,242 database_manager Connected to the database
+INFO 2023-11-11 16:34:12,389 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:34:14,781 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:34:34,758 database_manager Connected to the database
+INFO 2023-11-11 16:34:34,973 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:34:37,769 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:35:29,122 database_manager Connected to the database
+INFO 2023-11-11 16:35:29,305 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:36:13,092 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:36:15,644 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:39:08,788 database_manager Connected to the database
+INFO 2023-11-11 16:39:12,855 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:39:51,876 database_manager Connected to the database
+INFO 2023-11-11 16:40:25,420 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:40:27,448 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:41:00,396 database_manager Connected to the database
+INFO 2023-11-11 16:41:00,826 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:41:03,531 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:41:37,533 database_manager Connected to the database
+INFO 2023-11-11 16:41:37,687 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:41:40,076 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:41:47,765 database_manager Connected to the database
+INFO 2023-11-11 16:41:48,095 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:41:49,614 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:41:51,674 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:44:22,280 database_manager Connected to the database
+INFO 2023-11-11 16:44:25,146 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:44:27,641 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:45:10,291 database_manager Connected to the database
+INFO 2023-11-11 16:45:10,585 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:51:51,390 database_manager Connected to the database
+INFO 2023-11-11 16:51:56,719 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:51:58,147 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:52:00,460 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:52:22,137 database_manager Connected to the database
+INFO 2023-11-11 16:52:22,769 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:52:23,847 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:52:26,200 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:52:57,148 database_manager Connected to the database
+INFO 2023-11-11 16:53:04,938 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:53:07,591 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:53:35,311 database_manager Connected to the database
+INFO 2023-11-11 16:53:38,344 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:53:39,711 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:53:43,030 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:54:34,268 database_manager Connected to the database
+INFO 2023-11-11 16:54:45,356 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-11 16:54:47,729 views 127.0.0.1 Making Post request to Generate a Report
