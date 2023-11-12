@@ -29,22 +29,23 @@
         </tr>
     </thead>
     <tbody>
-    {% for student in student_gpa_list.0 %}
+    {% for student in student_gpa_list %}
         <tr>
             <td>{{ forloop.counter }}</td>
-            <td>{{ student.0}}</td>
-            <td>{{ student.1 }}</td>
-            <td>{{ student.2 }}</td>
-            <td>{{ student.3 }}</td>
-            <td>{{ student.4 }}</td>
+            <td>{{ student.id }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.gpa_sem1|default:"N/A" }}</td>
+            <td>{{ student.gpa_sem2|default:"N/A" }}</td>
+            <td>{{ student.cumulative_gpa|default:"N/A" }}</td>
         </tr>
-        {% empty %}
+    {% empty %}
         <tr>
             <td colspan="6">No student details available</td>
         </tr>
-        {% endfor %}
+    {% endfor %}
     </tbody>
 </table>
+
 
 </body>
 </html>
