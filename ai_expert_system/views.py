@@ -90,7 +90,7 @@ def grades(request):
 
         # Setting the Default value to 2.2 if none is entered
         try:
-            form_gpa = int(grade_points)
+            form_gpa = float(grade_points)
         except (TypeError, ValueError):
             form_gpa = 2.2
 

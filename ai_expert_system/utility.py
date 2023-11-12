@@ -71,7 +71,7 @@ def alert_system(probation_list):
             template_copy = template_copy.replace('[Programme]', student['program'])
             template_copy = template_copy.replace('[Student id]', student['id'])
             # Send the email to the student if their GPA is less than or equal to 2.2
-            recipients = [student['email'], "academic_advisor@utech.edu.jm", 'faculty_administrator@utech.edu.jm', student['program']+'_director@utech.edu.jm','chevking101@gmail.com']
+            recipients = [student['email'], "academic_advisor@utech.edu.jm", 'faculty_administrator@utech.edu.jm', student['program']+'_director@utech.edu.jm']
             for recipient in recipients:
                 send_email('artiintel6@gmail.com', 'vnov zbob lkcu hnxy', recipient,
                            'Important Notice: Academic Status Update', template_copy)

@@ -1304,3 +1304,26 @@ INFO 2023-11-12 13:24:09,798 views 127.0.0.1 Making Post request to Generate a R
 INFO 2023-11-12 13:24:40,172 database_manager Connected to the database
 INFO 2023-11-12 13:24:42,511 views 127.0.0.1 Making Post request to Generate a Report
 INFO 2023-11-12 13:24:45,432 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-12 13:26:06,234 database_manager Connected to the database
+INFO 2023-11-12 13:26:09,298 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-12 13:26:11,446 views 127.0.0.1 is Accessing The students page
+INFO 2023-11-12 13:26:43,911 views 127.0.0.1 is Accessing The students page
+INFO 2023-11-12 13:26:43,911 views 127.0.0.1 Making Post request to insert student
+INFO 2023-11-12 13:26:43,913 database_manager Student was added successfully
+INFO 2023-11-12 13:26:48,803 views 127.0.0.1 is Accessing The module page
+INFO 2023-11-12 13:26:56,713 views 127.0.0.1 is Accessing The module page
+INFO 2023-11-12 13:26:56,713 views 127.0.0.1 Making Post request to insert module
+INFO 2023-11-12 13:27:16,100 views 127.0.0.1 Making Post request to insert grade
+INFO 2023-11-12 13:27:18,493 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-12 13:27:21,152 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-12 13:28:59,953 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-12 13:29:40,960 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-12 13:29:43,039 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-12 13:30:10,523 database_manager Connected to the database
+INFO 2023-11-12 13:30:21,215 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-12 13:30:22,437 database_manager Connected to the database
+INFO 2023-11-12 13:30:36,686 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-12 13:30:39,075 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-12 13:31:08,899 database_manager Connected to the database
+INFO 2023-11-12 13:31:11,388 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-12 13:31:33,546 views 127.0.0.1 Making Post request to Generate a Report
