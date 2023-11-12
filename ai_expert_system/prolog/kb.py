@@ -1,4 +1,4 @@
-def init(student_gpa_list):
+def calculate_gpa(student_gpa_list):
     student_sem1_dict = {}
     student_sem2_dict = {}
     student_gpa_dict = {}

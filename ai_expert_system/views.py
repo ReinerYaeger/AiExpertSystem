@@ -120,7 +120,7 @@ def generate_report(request):
         form_academic_year = request.POST.get('academic_year')
 
         try:
-            form_gpa = int(form_gpa)
+            form_gpa = float(form_gpa)
         except (TypeError, ValueError):
             form_gpa = None
 
@@ -132,18 +132,26 @@ def generate_report(request):
         student_gpa_list = database_manager.find_students_from_year_or_gpa(form_data)
 
         # Calculate GPA and create a dictionary for each student
-        student_gpa_dict = kb.init(student_gpa_list)
+        student_gpa_dict = kb.calculate_gpa(student_gpa_list)
 
         students_info = []
         all_students = database_manager.get_students()
 
         student_gpa_list = []
-        # Assuming this is within a loop over student data
+
         for student_id, gpa_data in student_gpa_dict.items():
             student_name = next((record[1] for record in all_students if record[0] == student_id), None)
 
-            # Check the condition and filter accordingly
-            if form_gpa is None or gpa_data['cumulative_gpa'] <= form_gpa:
+            if form_gpa is None:
+                student_dict = {
+                    'id': student_id,
+                    'name': student_name,
+                    'gpa_sem1': gpa_data['semester1_gpa'],
+                    'gpa_sem2': gpa_data['semester2_gpa'],
+                    'cumulative_gpa': gpa_data['cumulative_gpa'],
+                }
+                student_gpa_list.append(student_dict)
+            elif gpa_data['cumulative_gpa'] <= form_gpa:
                 student_dict = {
                     'id': student_id,
                     'name': student_name,
@@ -153,16 +161,13 @@ def generate_report(request):
                 }
                 student_gpa_list.append(student_dict)
 
-
         context = {'student_gpa_list': student_gpa_list}
 
-        # Example of expected format
-        # Send email
         student_email_information = {'name': 'Jane Doe', 'id': '9876543210', 'gpa': 2.2, 'school': 'Arts',
                                      'program': 'Eng', 'email': 'jane.doe@example.com'}
 
         try:
-            t1 = threading.Thread(target=utility.alert_system, args=(students_info,))
+            t1 = threading.Thread(target=utility.alert_system, args=(student_email_information,))
             t1.start()
         except Exception as e:
             print(e)
