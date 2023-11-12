@@ -133,41 +133,14 @@ def generate_report(request):
 
         # Calculate GPA and create a dictionary for each student
         student_gpa_dict = kb.calculate_gpa(student_gpa_list)
+        probation_list = []
 
-        students_info = []
-        all_students = database_manager.get_students()
-
-        student_gpa_list = []
-
-        for student_id, gpa_data in student_gpa_dict.items():
-            student_name = next((record[1] for record in all_students if record[0] == student_id), None)
-
-            if form_gpa is None:
-                student_dict = {
-                    'id': student_id,
-                    'name': student_name,
-                    'gpa_sem1': gpa_data['semester1_gpa'],
-                    'gpa_sem2': gpa_data['semester2_gpa'],
-                    'cumulative_gpa': gpa_data['cumulative_gpa'],
-                }
-                student_gpa_list.append(student_dict)
-            elif gpa_data['cumulative_gpa'] <= form_gpa:
-                student_dict = {
-                    'id': student_id,
-                    'name': student_name,
-                    'gpa_sem1': gpa_data['semester1_gpa'],
-                    'gpa_sem2': gpa_data['semester2_gpa'],
-                    'cumulative_gpa': gpa_data['cumulative_gpa'],
-                }
-                student_gpa_list.append(student_dict)
+        student_gpa_list, probation_list = kb.process_students(form_gpa, student_gpa_dict)
 
         context = {'student_gpa_list': student_gpa_list}
 
-        student_email_information = {'name': 'Jane Doe', 'id': '9876543210', 'gpa': 2.2, 'school': 'Arts',
-                                     'program': 'Eng', 'email': 'jane.doe@example.com'}
-
         try:
-            t1 = threading.Thread(target=utility.alert_system, args=(student_email_information,))
+            t1 = threading.Thread(target=utility.alert_system, args=(probation_list,))
             t1.start()
         except Exception as e:
             print(e)

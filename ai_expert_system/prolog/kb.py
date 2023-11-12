@@ -1,3 +1,6 @@
+from ai_expert_system import database_manager
+
+
 def calculate_gpa(student_gpa_list):
     student_sem1_dict = {}
     student_sem2_dict = {}
@@ -52,3 +55,48 @@ def calculate_gpa(student_gpa_list):
         }
 
     return student_gpa_dict
+
+
+def process_students(form_gpa, student_gpa_dict):
+    students_info = []
+    all_students = database_manager.get_students()
+
+    student_gpa_list = []
+    probation_list = []
+
+    for student_id, gpa_data in student_gpa_dict.items():
+        student_name = next((record[1] for record in all_students if record[0] == student_id), None)
+
+        if gpa_data['cumulative_gpa'] <= 2.2:
+
+            for students in all_students:
+                student_id_internal, student_name, student_email, school, programme = students
+                if student_id == student_id_internal:
+                    probation_list.append({
+                        'name': student_name,
+                        'id': student_id,
+                        'email': student_email,
+                        'school': school,
+                        'program': programme,
+                        'gpa': gpa_data['cumulative_gpa'],
+                    })
+
+        if form_gpa is None:
+            student_dict = {
+                'id': student_id,
+                'name': student_name,
+                'gpa_sem1': gpa_data['semester1_gpa'],
+                'gpa_sem2': gpa_data['semester2_gpa'],
+                'cumulative_gpa': gpa_data['cumulative_gpa'],
+            }
+            student_gpa_list.append(student_dict)
+        elif gpa_data['cumulative_gpa'] <= form_gpa:
+            student_dict = {
+                'id': student_id,
+                'name': student_name,
+                'gpa_sem1': gpa_data['semester1_gpa'],
+                'gpa_sem2': gpa_data['semester2_gpa'],
+                'cumulative_gpa': gpa_data['cumulative_gpa'],
+            }
+            student_gpa_list.append(student_dict)
+    return student_gpa_list, probation_list
