@@ -1327,3 +1327,7 @@ INFO 2023-11-12 13:30:39,075 views 127.0.0.1 Making Post request to Generate a R
 INFO 2023-11-12 13:31:08,899 database_manager Connected to the database
 INFO 2023-11-12 13:31:11,388 views 127.0.0.1 Making Post request to Generate a Report
 INFO 2023-11-12 13:31:33,546 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-12 13:36:43,094 database_manager Connected to the database
+INFO 2023-11-12 13:36:44,269 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-12 13:36:45,458 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-12 13:36:47,853 views 127.0.0.1 Making Post request to Generate a Report

@@ -141,7 +141,11 @@ def generate_report(request):
 
         try:
             t1 = threading.Thread(target=utility.alert_system, args=(probation_list,))
-            t1.start()
+            if t1.is_alive():
+                pass
+            else:
+                t1.start()
+
         except Exception as e:
             print(e)
 
