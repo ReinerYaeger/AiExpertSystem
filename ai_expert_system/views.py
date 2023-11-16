@@ -89,10 +89,11 @@ def grades(request):
         grade_points = request.POST.get('grade_points'),
 
         # Setting the Default value to 2.2 if none is entered
-        try:
-            form_gpa = float(grade_points)
-        except (TypeError, ValueError):
+
+        if grade_points == '' or grade_points is None
             form_gpa = 2.2
+        else:
+            form_gpa = float(str(grade_points))
 
         form_data = {
             'student_id': request.POST.get('student_id'),
