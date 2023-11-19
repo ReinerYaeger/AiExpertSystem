@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 from ai_expert_system import database_manager, utility
 
-from ai_expert_system.prolog import kb
+from ai_expert_system.prolog import kb #, prolog_controller
 
 logger = logging.getLogger('ai_expert_system')
 
@@ -89,11 +89,10 @@ def grades(request):
         grade_points = request.POST.get('grade_points'),
 
         # Setting the Default value to 2.2 if none is entered
-
-        if grade_points == '' or grade_points is None
+        if grade_points == '' or grade_points is None:
             form_gpa = 2.2
         else:
-            form_gpa = float(str(grade_points))
+            form_gpa = float(grade_points[0])
 
         form_data = {
             'student_id': request.POST.get('student_id'),
