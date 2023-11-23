@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 from ai_expert_system import database_manager, utility
 
-from ai_expert_system.prolog import kb #, prolog_controller
+from ai_expert_system.prolog import kb , prolog_controller
 
 logger = logging.getLogger('ai_expert_system')
 
@@ -84,12 +84,19 @@ def grades(request):
         'id_list': database_manager.get_student_ids(),
         'module_list': database_manager.get_module_names(),
     }
+    if 'delete_grade' in request.POST:
+        form_data = {
+            'student_id': request.POST.get('student_id'),
+            'module_code': request.POST.get('module_code'),
+            'semester': request.POST.get('semester'),
+        }
+
     if 'insert_grade' in request.POST:
         logger.info(f"{client_ip} Making Post request to insert grade")
         grade_points = request.POST.get('grade_points'),
 
         # Setting the Default value to 2.2 if none is entered
-        if grade_points == '' or grade_points is None:
+        if grade_points == '' or grade_points is None or grade_points is not float:
             form_gpa = 2.2
         else:
             form_gpa = float(grade_points[0])
@@ -130,11 +137,23 @@ def generate_report(request):
         }
 
         student_gpa_list = database_manager.find_students_from_year_or_gpa(form_data)
+        student_progress_list = database_manager.get_student_progress()
+        module_list = database_manager.get_modules()
 
         # Calculate GPA and create a dictionary for each student
         student_gpa_dict = kb.calculate_gpa(student_gpa_list)
         probation_list = []
 
+        #student_gpa_list, probation_list = kb.process_students(form_gpa, student_gpa_dict)
+        gpa_list = prolog_controller.generate_report(student_progress_list, module_list, student_gpa_list)
+
+
+        #context = {'student_gpa_list': student_gpa_list}
+        # student_gpa_list = database_manager.find_students_from_year_or_gpa(form_data)
+        #
+        # # Calculate GPA and create a dictionary for each student
+        probation_list = []
+        #
         student_gpa_list, probation_list = kb.process_students(form_gpa, student_gpa_dict)
 
         context = {'student_gpa_list': student_gpa_list}
@@ -167,47 +186,47 @@ def query(request):
 
     return render(request, 'query_database/query_database.html', context)
 
-# def get_student_data(request):
-#     students = database_manager.get_students()  # Retrieve student data from your database_manager
-#     print(students)
-#     formatted_students = []
-#
-#     for student in students:
-#         formatted_students.append({
-#             'id': student[0],
-#             'name': student[1],
-#             'email': student[2],
-#             'school': student[3],
-#             'programme': student[4],
-#         })
-#
-#     return JsonResponse({'students': formatted_students})
+def get_student_data(request):
+    students = database_manager.get_students()  # Retrieve student data from your database_manager
+    print(students)
+    formatted_students = []
+
+    for student in students:
+        formatted_students.append({
+            'id': student[0],
+            'name': student[1],
+            'email': student[2],
+            'school': student[3],
+            'programme': student[4],
+        })
+
+    return JsonResponse({'students': formatted_students})
 
 
-# def get_module_data(request):
-#     modules = database_manager.get_modules()
-#     formatted_modules = []
-#
-#     for module in modules:
-#         formatted_modules.append({
-#             'module_name': module[0],
-#             'credit': module[1],
-#         })
-#
-#     return JsonResponse({'modules': formatted_modules})
+def get_module_data(request):
+    modules = database_manager.get_modules()
+    formatted_modules = []
+
+    for module in modules:
+        formatted_modules.append({
+            'module_name': module[0],
+            'credit': module[1],
+        })
+
+    return JsonResponse({'modules': formatted_modules})
 
 
-# def get_student_progress_data(request):
-#     grade_list = database_manager.get_student_progress()
-#     formatted_grades = []
-#
-#     for grade in grade_list:
-#         formatted_grades.append({
-#             'module_code': grade[0],
-#             'student_id': grade[1],
-#             'academic_year': grade[2],
-#             'semester': grade[3],
-#             'grade_points': grade[4],
-#         })
-#
-#     return JsonResponse({'student_details': formatted_grades})
+def get_student_progress_data(request):
+    grade_list = database_manager.get_student_progress()
+    formatted_grades = []
+
+    for grade in grade_list:
+        formatted_grades.append({
+            'module_code': grade[0],
+            'student_id': grade[1],
+            'academic_year': grade[2],
+            'semester': grade[3],
+            'grade_points': grade[4],
+        })
+
+    return JsonResponse({'student_details': formatted_grades})

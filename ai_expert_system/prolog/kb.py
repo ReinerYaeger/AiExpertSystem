@@ -89,7 +89,9 @@ def process_students(form_gpa, student_gpa_dict):
                 'gpa_sem2': gpa_data['semester2_gpa'],
                 'cumulative_gpa': gpa_data['cumulative_gpa'],
             }
-            student_gpa_list.append(student_dict)
+            name_exists = any(student['name'] == student_name for student in student_gpa_list)
+            if not name_exists:
+                student_gpa_list.append(student_dict)
         elif gpa_data['cumulative_gpa'] <= form_gpa:
             student_dict = {
                 'id': student_id,
@@ -98,5 +100,7 @@ def process_students(form_gpa, student_gpa_dict):
                 'gpa_sem2': gpa_data['semester2_gpa'],
                 'cumulative_gpa': gpa_data['cumulative_gpa'],
             }
-            student_gpa_list.append(student_dict)
+            name_exists = any(student['name'] == student_name for student in student_gpa_list)
+            if not name_exists:
+                student_gpa_list.append(student_dict)
     return student_gpa_list, probation_list

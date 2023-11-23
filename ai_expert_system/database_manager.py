@@ -8,24 +8,28 @@ from mysql.connector.cursor import MySQLCursorDict
 
 logger = logging.getLogger('ai_expert_system')
 
-try:
-    connection = connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="expert_system"
 
-    )
-    logger.info("Connected to the database")
-    print("Connected to the database")
+def define_connection():
+    try:
+        connection = connect(
+            host="localhost",
+            user="root",
+            password="",
+            database="expert_system"
 
-except Error as e:
-    logger.error("Error connecting to the database: %s", e)
-except Exception as e:
-    logger.error("Database connection error: %s", str(e))
+        )
+        logger.info("Connected to the database")
+        print("Connected to the database")
+        return connection
+
+    except Error as e:
+        logger.error("Error connecting to the database: %s", e)
+    except Exception as e:
+        logger.error("Database connection error: %s", str(e))
 
 
 def add_student(form_data):
+    connection = define_connection()
     try:
         with connection.cursor() as cursor:
             sql_query = f"INSERT INTO student (student_id, student_name, student_email, school, programme) " \
@@ -41,6 +45,8 @@ def add_student(form_data):
 
 
 def delete_student(form_data):
+
+    connection = define_connection()
     try:
 
         with connection.cursor() as cursor:
@@ -54,6 +60,7 @@ def delete_student(form_data):
 
 
 def add_module(form_data):
+    connection = define_connection()
     try:
         with connection.cursor() as cursor:
             cursor.execute(f"INSERT INTO module (module,no_of_credits)"
@@ -66,6 +73,7 @@ def add_module(form_data):
 
 
 def update_module(form_data):
+    connection = define_connection()
     try:
         with connection.cursor() as cursor:
             cursor.execute(
@@ -78,6 +86,7 @@ def update_module(form_data):
 
 
 def delete_module(form_data):
+    connection = define_connection()
     try:
         with connection.cursor() as cursor:
             cursor.execute(f"DELETE FROM module WHERE module='{form_data['module_name']}'")
@@ -87,7 +96,20 @@ def delete_module(form_data):
         return
 
 
+def delete_grades(form_data):
+    connection = define_connection()
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(
+                f"DELETE FROM student_progress WHERE module='{form_data['module_code']}' AND student_id='{form_data['student_id']}' AND semester={form_data['semester']} ")
+        connection.commit()
+    except Error as err:
+        logger.error(f"{err}")
+        return
+
+
 def get_students():
+    connection = define_connection()
     try:
         with connection.cursor() as cursor:
             cursor.execute(f"SELECT * FROM student")
@@ -99,6 +121,7 @@ def get_students():
 
 
 def get_student_ids():
+    connection = define_connection()
     try:
         with connection.cursor() as cursor:
             cursor.execute(f"SELECT student_id FROM student")
@@ -111,6 +134,7 @@ def get_student_ids():
 
 
 def get_modules():
+    connection = define_connection()
     try:
         with connection.cursor() as cursor:
             cursor.execute(f"SELECT * FROM module")
@@ -122,6 +146,7 @@ def get_modules():
 
 
 def get_module_names():
+    connection = define_connection()
     try:
         with connection.cursor() as cursor:
             cursor.execute(f"SELECT module FROM module")
@@ -135,6 +160,7 @@ def get_module_names():
 
 
 def add_student_progress(form_data):
+    connection = define_connection()
     try:
         with connection.cursor() as cursor:
             sql_query = "INSERT INTO student_progress (module, student_id, academic_year, semester, grade_points) VALUES (%s, %s, %s, %s, %s)"
@@ -157,6 +183,7 @@ def add_student_progress(form_data):
 
 
 def get_student_progress():
+    connection = define_connection()
     try:
         with connection.cursor() as cursor:
             cursor.execute(f"SELECT * FROM student_progress")
@@ -169,6 +196,7 @@ def get_student_progress():
 
 
 def find_students_from_year_or_gpa(form_data):
+    connection = define_connection()
     try:
         with connection.cursor() as cursor:
             if form_data['academic_year'] is not None and form_data['gpa'] is not None:
@@ -202,6 +230,7 @@ def find_students_from_year_or_gpa(form_data):
 
 
 def get_all_students_gpa():
+    connection = define_connection()
     try:
         with connection.cursor() as cursor:
             cursor.execute(f"Select * from student_gpa_view WHERE grade_points is not null")
