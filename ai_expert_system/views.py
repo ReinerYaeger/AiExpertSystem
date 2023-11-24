@@ -92,21 +92,20 @@ def grades(request):
         }
 
     if 'insert_grade' in request.POST:
+        if request.POST.get('student_id') is None or  request.POST.get('module_code') is None:
+            return render(request, 'grades/grades.html', context)
         logger.info(f"{client_ip} Making Post request to insert grade")
         grade_points = request.POST.get('grade_points'),
 
         # Setting the Default value to 2.2 if none is entered
-        if grade_points == '' or grade_points is None or grade_points is not float:
-            form_gpa = 2.2
-        else:
-            form_gpa = float(grade_points[0])
+        grade_points = float(grade_points[0])
 
         form_data = {
             'student_id': request.POST.get('student_id'),
             'module_code': request.POST.get('module_code'),
             'academic_year': request.POST.get('academic_year'),
             'semester': request.POST.get('semester'),
-            'grade_points': form_gpa,
+            'grade_points': grade_points,
         }
         database_manager.add_student_progress(form_data)
 

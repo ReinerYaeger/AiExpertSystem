@@ -65,7 +65,11 @@ def process_students(form_gpa, student_gpa_dict):
     probation_list = []
 
     for student_id, gpa_data in student_gpa_dict.items():
-        student_name = next((record[1] for record in all_students if record[0] == student_id), None)
+        student_name = None
+        for record in all_students:
+            if record[0] == student_id:
+                student_name = record[1]
+                break
 
         if gpa_data['cumulative_gpa'] <= 2.2:
 
@@ -80,6 +84,7 @@ def process_students(form_gpa, student_gpa_dict):
                         'program': programme,
                         'gpa': gpa_data['cumulative_gpa'],
                     })
+                    break
 
         if form_gpa is None:
             student_dict = {

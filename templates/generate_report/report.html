@@ -11,6 +11,13 @@
     <title>Report </title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 </head>
+<script>
+    window.onload = function() {
+        setTimeout(function() {
+            alert("An email has been sent to students who are on academic probation");
+        }, 2000);
+    };
+</script>
 <body>
 {% include "navbar.html" %}
 <br>

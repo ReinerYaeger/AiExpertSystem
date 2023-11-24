@@ -26,7 +26,7 @@
                     <br />
                     <div class="form-group">
                         <label for="student_id">Student ID</label>
-                        <select class="form-control" id="student_id" name="student_id">
+                        <select required class="form-control" id="student_id" name="student_id">
                         <option value=""> </option>
                             {% for id in id_list %}
                             <option value="{{ id }}">{{ id }}</option>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-group">
                         <label for="module_code">Module Code</label>
-                        <select class="form-control" id="module_code" name="module_code">
+                        <select required class="form-control" id="module_code" name="module_code">
                         <option value=""> </option>
                             {% for module in module_list %}
                             <option value="{{ module }}">{{ module }}</option>
@@ -45,7 +45,7 @@
                     <div class="form-group">
                         <label for="academic_year">Academic Year</label>
                         <div class="input-group">
-                            <select class="form-control" id="academic_year" name="academic_year">
+                            <select required class="form-control" id="academic_year" name="academic_year">
                             <option value=""> </option>
                                 {% for year in year_list %}
                                 <option value="{{ year }}">{{ year }}</option>
@@ -55,16 +55,16 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="grade_points">Grade Point </label>
+                        <label  for="grade_points">Grade Point </label>
                         <div class="input-group">
-                            <input type="number" class="form-control" id="grade_points" name="grade_points" step="0.01" min="0.00" max="4.30" placeholder="Enter grade point">
+                            <input required type="number" class="form-control" id="grade_points" name="grade_points" step="0.01" min="0.00" max="4.30" placeholder="Enter grade point">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="semester">Semester</label>
 
-                        <select class="form-control" id="semester" name="semester">
+                        <select required class="form-control" id="semester" name="semester">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
