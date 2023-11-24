@@ -2334,6 +2334,24 @@ INFO 2023-11-23 23:05:38,974 database_manager Connected to the database
 INFO 2023-11-23 23:05:38,977 database_manager Connected to the database
 INFO 2023-11-23 23:05:38,979 database_manager Connected to the database
 INFO 2023-11-23 23:05:38,999 database_manager Connected to the database
+INFO 2023-11-23 23:20:47,067 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-23 23:20:47,383 database_manager Connected to the database
+INFO 2023-11-23 23:20:47,384 database_manager Connected to the database
+INFO 2023-11-23 23:20:47,384 database_manager Connected to the database
+INFO 2023-11-24 15:33:25,564 views 127.0.0.1 is Accessing The home page
+INFO 2023-11-24 15:33:25,962 database_manager Connected to the database
+INFO 2023-11-24 15:33:25,962 database_manager Connected to the database
+INFO 2023-11-24 15:33:25,962 database_manager Connected to the database
+INFO 2023-11-24 15:33:29,185 views 127.0.0.1 is Accessing The students page
+INFO 2023-11-24 15:33:29,426 database_manager Connected to the database
+INFO 2023-11-24 15:33:29,427 database_manager Connected to the database
+INFO 2023-11-24 15:33:29,427 database_manager Connected to the database
+INFO 2023-11-24 15:33:36,123 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-24 15:33:41,067 views 127.0.0.1 Making Post request to Generate a Report
+INFO 2023-11-24 15:33:41,070 database_manager Connected to the database
+INFO 2023-11-24 15:33:41,074 database_manager Connected to the database
+INFO 2023-11-24 15:33:41,076 database_manager Connected to the database
+INFO 2023-11-24 15:33:41,148 database_manager Connected to the database
 INFO 2023-11-24 12:39:15,641 views 127.0.0.1 is Accessing The home page
 INFO 2023-11-24 12:39:16,476 database_manager Connected to the database
 INFO 2023-11-24 12:39:16,477 database_manager Connected to the database
