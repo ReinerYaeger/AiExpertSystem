@@ -11,7 +11,9 @@
     <title>Students </title>
 </head>
 <body>
+
 {% include "navbar.html" %}
+<!-- Display Form for user to module information -->
 <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
     <form method="post" action="" id="form" class="border p-4 rounded">
         {% csrf_token %}
@@ -32,8 +34,9 @@
             <button type="submit" class="btn btn-secondary" name="update_module">Update</button>
             <button type="submit" class="btn btn-danger" name="delete_module">Delete</button>
     </form>
-
 </div>
+
+<!-- Display information inside the database-->
 {% include "query_database/query_database.html"%}
 
 </body>

@@ -3,6 +3,8 @@
 # Gail-Ann Archer - 2002407
 
 from ai_expert_system import database_manager
+
+
 def calculate_gpa(student_gpa_list):
     student_sem1_dict = {}
     student_sem2_dict = {}

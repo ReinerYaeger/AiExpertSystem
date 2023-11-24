@@ -11,6 +11,7 @@
     <title>Students </title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 </head>
+<!-- Display Form for user to enter Student information -->
 <body>
 {% include "navbar.html" %}
 <div>
@@ -48,6 +49,7 @@
     </form>
     </div>
 </div>
+<!-- Display information from database -->
 {% include "query_database/query_database.html"%}
 
 </body>

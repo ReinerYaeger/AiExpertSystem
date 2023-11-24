@@ -15,6 +15,7 @@ from mysql.connector.cursor import MySQLCursorDict
 logger = logging.getLogger('ai_expert_system')
 
 
+# Create Connection with the MYSQL Server
 def define_connection():
     try:
         connection = connect(
@@ -34,6 +35,7 @@ def define_connection():
         logger.error("Database connection error: %s", str(e))
 
 
+# Add Student to Students Database
 def add_student(form_data):
     connection = define_connection()
     try:
@@ -50,8 +52,8 @@ def add_student(form_data):
         return
 
 
+# Delete a Student from the Student Database
 def delete_student(form_data):
-
     connection = define_connection()
     try:
 
@@ -65,6 +67,7 @@ def delete_student(form_data):
         return
 
 
+# Add a Module to the Module Database
 def add_module(form_data):
     connection = define_connection()
     try:
@@ -78,6 +81,7 @@ def add_module(form_data):
         return
 
 
+# Update the Module Information in the Module Database
 def update_module(form_data):
     connection = define_connection()
     try:
@@ -91,6 +95,7 @@ def update_module(form_data):
         return
 
 
+# Delete the Module Information in the Module Database
 def delete_module(form_data):
     connection = define_connection()
     try:
@@ -102,6 +107,7 @@ def delete_module(form_data):
         return
 
 
+# Delete the Grades Information in the Student Progress Database
 def delete_grades(form_data):
     connection = define_connection()
     try:
@@ -114,6 +120,7 @@ def delete_grades(form_data):
         return
 
 
+# Gets the Student Information from the Student Database
 def get_students():
     connection = define_connection()
     try:
@@ -126,6 +133,7 @@ def get_students():
         return
 
 
+# Gets the Student ID Information from the Student Database
 def get_student_ids():
     connection = define_connection()
     try:
@@ -139,6 +147,7 @@ def get_student_ids():
         return
 
 
+# Gets the Module Information from the Module Database
 def get_modules():
     connection = define_connection()
     try:
@@ -151,6 +160,7 @@ def get_modules():
         return
 
 
+# Gets the Module Name from the Module Database
 def get_module_names():
     connection = define_connection()
     try:
@@ -165,6 +175,7 @@ def get_module_names():
         return
 
 
+# Insert Student Grades into the Student Progress Information
 def add_student_progress(form_data):
     connection = define_connection()
     try:
@@ -188,6 +199,7 @@ def add_student_progress(form_data):
         return
 
 
+# Gets Student Grades from the Student Progress Database
 def get_student_progress():
     connection = define_connection()
     try:
@@ -201,6 +213,7 @@ def get_student_progress():
         return
 
 
+# Find Students based on the academic year or gpa from the Student Progress Database
 def find_students_from_year_or_gpa(form_data):
     connection = define_connection()
     try:
@@ -235,6 +248,7 @@ def find_students_from_year_or_gpa(form_data):
         return None
 
 
+# Gets all Student with a gpa from the Student GPA View
 def get_all_students_gpa():
     connection = define_connection()
     try:
