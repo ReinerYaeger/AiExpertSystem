@@ -1,6 +1,8 @@
+# Matthew Samuels - 2005744
+# Chevaughn Gibson - 1900396
+# Gail-Ann Archer - 2002407
+
 from ai_expert_system import database_manager
-
-
 def calculate_gpa(student_gpa_list):
     student_sem1_dict = {}
     student_sem2_dict = {}
@@ -64,6 +66,7 @@ def process_students(form_gpa, student_gpa_dict):
     student_gpa_list = []
     probation_list = []
 
+    # Here we are searching for each student matching the data process with what is stored in the database
     for student_id, gpa_data in student_gpa_dict.items():
         student_name = None
         for record in all_students:
@@ -71,6 +74,7 @@ def process_students(form_gpa, student_gpa_dict):
                 student_name = record[1]
                 break
 
+        # We check if the student is on probation here if so we add them to a list
         if gpa_data['cumulative_gpa'] <= 2.2:
 
             for students in all_students:
@@ -85,7 +89,7 @@ def process_students(form_gpa, student_gpa_dict):
                         'gpa': gpa_data['cumulative_gpa'],
                     })
                     break
-
+        # This section of code add students to the list that will be displayed based on the users request
         if form_gpa is None:
             student_dict = {
                 'id': student_id,
@@ -97,6 +101,7 @@ def process_students(form_gpa, student_gpa_dict):
             name_exists = any(student['name'] == student_name for student in student_gpa_list)
             if not name_exists:
                 student_gpa_list.append(student_dict)
+
         elif gpa_data['cumulative_gpa'] <= form_gpa:
             student_dict = {
                 'id': student_id,

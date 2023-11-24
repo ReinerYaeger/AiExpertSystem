@@ -1,3 +1,9 @@
+# Matthew Samuels - 2005744
+# Chevaughn Gibson - 1900396
+# Gail-Ann Archer - 2002407
+
+# This file serves as a module responsible for handling interactions between a Django application and a MySQL database,
+
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from mysql.connector import connect, Error

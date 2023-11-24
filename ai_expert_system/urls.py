@@ -1,3 +1,6 @@
+# Matthew Samuels - 2005744
+# Chevaughn Gibson - 1900396
+# Gail-Ann Archer - 2002407
 from django.urls import path
 
 from . import views

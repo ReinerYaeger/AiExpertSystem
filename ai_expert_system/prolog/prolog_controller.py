@@ -1,3 +1,6 @@
+# Matthew Samuels - 2005744
+# Chevaughn Gibson - 1900396
+# Gail-Ann Archer - 2002407
 import mysql
 from pyswip import Prolog
 from ai_expert_system import database_manager
@@ -54,7 +57,7 @@ def calculate_cumulative_gpa(StudentID):
     return None
 
 
-# Generate the report
+# Here we interface with prolog
 def generate_report(student_progress_list, module_list, student_gpa_list):
     gpa_list = []
     try:

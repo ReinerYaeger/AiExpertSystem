@@ -1,3 +1,11 @@
+# Matthew Samuels - 2005744
+# Chevaughn Gibson - 1900396
+# Gail-Ann Archer - 2002407
+
+# This file contains all the views and the backend function for each page
+# Each function name corresponds to the page that will be displayed
+# Visit the Official Django  Documentation for more information https://docs.djangoproject.com/en/4.2/
+
 import logging
 import threading
 from django.http import JsonResponse
@@ -135,26 +143,18 @@ def generate_report(request):
             'gpa': form_gpa,
         }
 
+        # This section of code processes the students for probation, and to be displayed on the webpage
         student_gpa_list = database_manager.find_students_from_year_or_gpa(form_data)
         student_progress_list = database_manager.get_student_progress()
         module_list = database_manager.get_modules()
 
-        # Calculate GPA and create a dictionary for each student
         student_gpa_dict = kb.calculate_gpa(student_gpa_list)
-        probation_list = []
 
         #student_gpa_list, probation_list = kb.process_students(form_gpa, student_gpa_dict)
         gpa_list = prolog_controller.generate_report(student_progress_list, module_list, student_gpa_list)
 
-
-        #context = {'student_gpa_list': student_gpa_list}
-        # student_gpa_list = database_manager.find_students_from_year_or_gpa(form_data)
-        #
-        # # Calculate GPA and create a dictionary for each student
         probation_list = []
-        #
         student_gpa_list, probation_list = kb.process_students(form_gpa, student_gpa_dict)
-
         context = {'student_gpa_list': student_gpa_list}
 
         try:
