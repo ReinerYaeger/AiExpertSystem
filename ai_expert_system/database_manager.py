@@ -46,10 +46,10 @@ def add_student(form_data):
             cursor.execute(sql_query)
             connection.commit()
             logger.info("Student was added successfully")
-            return
+            return True
     except Error as err:
         logger.error(f"Error adding student to the database: {err}")
-        return
+    return False
 
 
 # Delete a Student from the Student Database
@@ -62,9 +62,10 @@ def delete_student(form_data):
             cursor.execute(sql_query, [form_data['student_id']])
             connection.commit()
         logger.info(" Student was deleted successfully ")
+        return True
     except Error as err:
         logger.error(f"{err}")
-        return
+        return False
 
 
 # Add a Module to the Module Database
@@ -115,9 +116,10 @@ def delete_grades(form_data):
             cursor.execute(
                 f"DELETE FROM student_progress WHERE module='{form_data['module_code']}' AND student_id='{form_data['student_id']}' AND semester={form_data['semester']} ")
         connection.commit()
+        return True
     except Error as err:
         logger.error(f"{err}")
-        return
+        return False
 
 
 # Gets the Student Information from the Student Database
@@ -193,10 +195,10 @@ def add_student_progress(form_data):
 
             cursor.execute(sql_query, values)
             connection.commit()
-        return
+        return True
     except Error as err:
         logger.error(f"{err}")
-        return
+        return False
 
 
 # Gets Student Grades from the Student Progress Database
@@ -259,3 +261,4 @@ def get_all_students_gpa():
     except Error as err:
         logger.error(f"{err}")
         return
+

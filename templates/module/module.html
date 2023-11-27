@@ -11,7 +11,23 @@
     <title>Students </title>
 </head>
 <body>
+{% if updated_module_response %}
+    <script>
+        alert("{{ 'Module Information has been updated' }}");
+    </script>
+{% endif %}
 
+{% if deleted_module_response %}
+       <script>
+        alert("{{ 'Module deleted successfully!'}}");
+    </script>
+{% endif %}
+
+{% if added_module_response %}
+       <script>
+        alert("{{ 'Module information saved successfully!'}}");
+    </script>
+{% endif %}
 {% include "navbar.html" %}
 <!-- Display Form for user to module information -->
 <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">

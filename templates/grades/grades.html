@@ -16,6 +16,28 @@
                 }
             }
         </script>
+        <!-- Alerts -->
+        {% if added_grades_response %}
+            <script>
+                alert("{{ 'Student Grades has been saved' }}");
+            </script>
+        {% endif %}
+                {% if error_added_grades_response %}
+            <script>
+                alert("{{ 'Error unable to save student grades' }}");
+            </script>
+        {% endif %}
+
+        {% if deleted_grades_response %}
+               <script>
+                alert("{{ 'Student Grades has been deleted'}}");
+            </script>
+        {% endif %}
+        {% if error_deleted_grades_response %}
+            <script>
+                alert("{{ 'Error unable to delete student grades'}}");
+            </script>
+        {% endif %}
     </head>
     <!-- Display Form for user to Student's grade information -->
     <body>

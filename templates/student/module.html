@@ -11,6 +11,39 @@
     <title>Module </title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 </head>
+<!-- Alerts -->
+{% if updated_module_response %}
+    <script>
+        alert("{{ 'Module Information has been updated' }}");
+    </script>
+{% endif %}
+{% if error_updated_module_response %}
+    <script>
+        alert("{{ 'Error updating student information' }}");
+    </script>
+{% endif %}
+
+{% if deleted_module_response %}
+       <script>
+        alert("{{ 'Module deleted successfully!'}}");
+    </script>
+{% endif %}
+{% if error_deleted_module_response %}
+       <script>
+        alert("{{ 'Error unable to delete module'}}");
+    </script>
+{% endif %}
+
+{% if added_module_response %}
+       <script>
+        alert("{{ 'Module information saved successfully!'}}");
+    </script>
+{% endif %}
+{% if error_added_module_response %}
+       <script>
+        alert("{{ 'Error unable to save module information'}}");
+    </script>
+{% endif %}
 <!-- Display Form for user to enter module information -->
 <body>
 {% include "navbar.html" %}

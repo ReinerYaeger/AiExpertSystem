@@ -9,11 +9,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Students </title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %} ">
 </head>
+<!-- Alerts -->
+{% if add_student_response %}
+    <script>
+        alert("{{ 'Student information has been saved' }}");
+    </script>
+{% endif %}
+{% if error_add_student_response %}
+    <script>
+        alert("{{ 'Error unable to save student information' }}");
+    </script>
+{% endif %}
+
+
+{% if delete_student_response %}
+       <script>
+        alert("{{ 'Student information has been deleted'}}");
+    </script>
+{% endif %}
+{% if error_delete_student_response %}
+       <script>
+        alert("{{ 'Error unable to delete student information'}}");
+    </script>
+{% endif %}
 <!-- Display Form for user to enter Student information -->
 <body>
 {% include "navbar.html" %}
+
 <div>
 <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
     <form method="post" action="" id="form" class="border p-4 rounded">
@@ -47,7 +71,8 @@
             <button type="submit" class="btn btn-primary" name="insert_student">Insert</button>
             <button type="submit" class="btn btn-danger" name="delete_student">Delete</button>
     </form>
-    </div>
+        </div>
+
 </div>
 <!-- Display information from database -->
 {% include "query_database/query_database.html"%}

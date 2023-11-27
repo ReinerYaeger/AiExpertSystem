@@ -13,9 +13,11 @@ from django.shortcuts import render
 
 from ai_expert_system import database_manager, utility
 
-from ai_expert_system.prolog import kb , prolog_controller
+from ai_expert_system.prolog import kb, prolog_controller
 
 logger = logging.getLogger('ai_expert_system')
+
+database_response = True
 
 
 def index(request):
@@ -44,7 +46,11 @@ def student(request):
                 'programme': request.POST.get('programme'),
             }
 
-            database_manager.add_student(form_data)
+            student_added = database_manager.add_student(form_data)
+            if student_added:
+                context['add_student_response'] = True
+            else:
+                context['error_add_student_response'] = False
 
         if 'delete_student' in request.POST:
             logger.info(f"{client_ip} Making Post request to delete {request.POST.get('student_id')} student")
@@ -52,12 +58,18 @@ def student(request):
                 'student_id': request.POST.get('student_id'),
             }
             database_manager.delete_student(form_data)
+            student_deleted = database_manager.delete_student(form_data)
+            if student_deleted:
+                context['delete_student_response'] = True
+            else:
+                context['error_delete_student_response'] = False
+
     return render(request, 'student/student.html', context)
 
 
 def module(request):
     client_ip = request.META['REMOTE_ADDR']
-
+    context = {}
     logger.info(f"{client_ip} is Accessing The module page")
 
     if 'update_module' in request.POST:
@@ -67,6 +79,11 @@ def module(request):
             'num_of_credits': request.POST.get('num_of_credits'),
         }
         database_manager.update_module(form_data)
+        module_updated = database_manager.update_module(form_data)
+        if module_updated:
+            context['updated_module_response'] = True
+        else:
+            context['error_updated_module_response'] = False
 
     elif 'delete_module' in request.POST:
         logger.info(f"{client_ip} Making Post request to delete module")
@@ -74,6 +91,11 @@ def module(request):
             'module_name': request.POST.get('module_name')
         }
         database_manager.delete_module(form_data)
+        module_deleted = database_manager.delete_module(form_data)
+        if module_deleted:
+            context['deleted_module_response'] = True
+        else:
+            context['error_deleted_module_response'] = False
 
     elif 'insert_module' in request.POST:
         logger.info(f"{client_ip} Making Post request to insert module")
@@ -82,7 +104,12 @@ def module(request):
             'num_of_credits': request.POST.get('num_of_credits'),
         }
         database_manager.add_module(form_data)
-    return render(request, 'student/module.html')
+        module_added = database_manager.add_module(form_data)
+        if module_added:
+            context['added_module_response'] = True
+        else:
+            context['error_added_module_response'] = False
+    return render(request, 'student/module.html', context)
 
 
 def grades(request):
@@ -98,9 +125,14 @@ def grades(request):
             'module_code': request.POST.get('module_code'),
             'semester': request.POST.get('semester'),
         }
-
+        database_manager.delete_grades(form_data)
+        grades_deleted = database_manager.delete_grades(form_data)
+        if grades_deleted:
+            context['deleted_grades_response'] = True
+        else:
+            context['error_deleted_grades_response'] = False
     if 'insert_grade' in request.POST:
-        if request.POST.get('student_id') is None or  request.POST.get('module_code') is None:
+        if request.POST.get('student_id') is None or request.POST.get('module_code') is None:
             return render(request, 'grades/grades.html', context)
         logger.info(f"{client_ip} Making Post request to insert grade")
         grade_points = request.POST.get('grade_points'),
@@ -116,6 +148,11 @@ def grades(request):
             'grade_points': grade_points,
         }
         database_manager.add_student_progress(form_data)
+        grades_added = database_manager.add_student_progress(form_data)
+        if grades_added:
+            context['added_grades_response'] = True
+        else:
+            context['error_added_grades_response'] = False
 
     return render(request, 'grades/grades.html', context)
 
@@ -150,7 +187,7 @@ def generate_report(request):
 
         student_gpa_dict = kb.calculate_gpa(student_gpa_list)
 
-        #student_gpa_list, probation_list = kb.process_students(form_gpa, student_gpa_dict)
+        # student_gpa_list, probation_list = kb.process_students(form_gpa, student_gpa_dict)
         gpa_list = prolog_controller.generate_report(student_progress_list, module_list, student_gpa_list)
 
         probation_list = []
@@ -184,6 +221,7 @@ def query(request):
     }
 
     return render(request, 'query_database/query_database.html', context)
+
 
 def get_student_data(request):
     students = database_manager.get_students()  # Retrieve student data from your database_manager
