@@ -4,7 +4,7 @@ from ai_expert_system import database_manager
 
 # Create Connection and Consult with Prolog file
 prolog = Prolog()
-prolog.consult("C:/Users/matth/OneDrive/Documents/Prolog/prolog_updated.pl")
+prolog.consult("C:/Users/Jupiter/PycharmProjects/AiExpertSystem/ai_expert_system/prologprolog_updated.pl")
 
 
 # Send Facts to Prolog from Student Progress and Module Database
